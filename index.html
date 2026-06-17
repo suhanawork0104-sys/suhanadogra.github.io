@@ -10,42 +10,29 @@
 <style>
 
 /* =======================
-   DARK GIS LAB BACKGROUND
+   DARK GIS LAB THEME
 ======================= */
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
+    background: #070c0a;
     color: #e8f1ef;
-
-    background:
-        radial-gradient(circle at 20% 20%, rgba(46,139,87,0.15), transparent 35%),
-        radial-gradient(circle at 80% 30%, rgba(70,130,180,0.15), transparent 40%),
-        radial-gradient(circle at 50% 80%, rgba(210,180,140,0.10), transparent 45%),
-
-        repeating-linear-gradient(
-            45deg,
-            rgba(255,255,255,0.04),
-            rgba(255,255,255,0.04) 1px,
-            transparent 1px,
-            transparent 18px
-        ),
-
-        #0b1210;
 }
 
 /* =======================
    NAVBAR
 ======================= */
 .navbar {
-    position: sticky;
+    position: fixed;
     top: 0;
-    background: rgba(10,15,13,0.85);
-    backdrop-filter: blur(10px);
+    width: 100%;
     display: flex;
     justify-content: center;
     gap: 18px;
     padding: 12px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: rgba(10,15,13,0.85);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
 }
 
 .navbar a {
@@ -59,163 +46,98 @@ body {
 }
 
 /* =======================
-   HEADER
+   HERO SECTION
 ======================= */
-.header {
-    text-align: center;
-    padding: 60px 20px 20px;
-    position: relative;
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 120px 8% 60px;
 }
 
-/* PROFILE IMAGE */
-.header img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid #7fd1b9;
-    object-fit: cover;
+.hero-text {
+    max-width: 50%;
 }
 
-/* TITLE */
-.header h1 {
-    font-size: 40px;
-    margin-top: 15px;
-    color: #ffffff;
+.hero h1 {
+    font-size: 44px;
+    margin-bottom: 10px;
 }
 
-.header p {
+.hero p {
     color: #b8d6cc;
 }
 
-/* =======================
-   REALISTIC GIS GLOBE
-======================= */
-.globe {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-
-    background:
-        radial-gradient(circle at 30% 30%, #b6f0ff, #1b3b4f 60%, #0a1a22);
-
-    box-shadow:
-        inset -20px -20px 40px rgba(0,0,0,0.6),
-        0 0 25px rgba(127,209,185,0.25);
-
-    animation: spin 12s linear infinite;
-}
-
-/* spinning */
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-/* =======================
-   SATELLITES (ORBIT STYLE)
-======================= */
-.satellite {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: #7fd1b9;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(127,209,185,0.8);
-}
-
-.s1 {
-    top: 60px;
-    left: 70px;
-    animation: orbit1 6s linear infinite;
-}
-
-.s2 {
-    top: 120px;
-    left: 200px;
-    animation: orbit2 8s linear infinite;
-}
-
-@keyframes orbit1 {
-    0% { transform: translate(0,0); }
-    50% { transform: translate(90px,-40px); }
-    100% { transform: translate(0,0); }
-}
-
-@keyframes orbit2 {
-    0% { transform: translate(0,0); }
-    50% { transform: translate(-80px,50px); }
-    100% { transform: translate(0,0); }
-}
-
-/* =======================
-   BUTTONS
-======================= */
+/* BUTTONS */
 .btn {
     display: inline-block;
-    margin: 10px 6px;
+    margin-top: 15px;
+    margin-right: 10px;
     padding: 10px 14px;
     background: #7fd1b9;
-    color: #0b1210;
+    color: #07110f;
+    font-weight: 600;
     border-radius: 10px;
     text-decoration: none;
-    font-weight: 600;
-}
-
-.btn:hover {
-    background: #5fb39d;
 }
 
 /* =======================
-   CONTAINER
+   REAL EARTH CANVAS
 ======================= */
-.container {
-    max-width: 1050px;
-    margin: auto;
-    padding: 20px;
+#globe {
+    width: 420px;
+    height: 420px;
 }
 
-/* SECTION TITLE */
-.section-title {
-    margin-top: 40px;
-    font-weight: 600;
+/* =======================
+   SECTIONS
+======================= */
+section {
+    padding: 60px 10%;
+}
+
+.title {
+    font-size: 18px;
     border-left: 4px solid #7fd1b9;
     padding-left: 10px;
-    color: #ffffff;
+    margin-bottom: 20px;
 }
 
-/* CARD */
+/* CARDS */
 .card {
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.08);
-    margin-top: 12px;
     padding: 16px;
     border-radius: 12px;
-    transition: 0.3s ease;
+    margin-bottom: 12px;
 }
 
-.card:hover {
-    transform: translateY(-4px);
-    background: rgba(255,255,255,0.07);
+/* =======================
+   SKILLS (ICON STYLE)
+======================= */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 12px;
 }
 
-/* TAG */
-.tag {
-    font-size: 12px;
-    padding: 4px 8px;
-    background: rgba(127,209,185,0.15);
-    border-radius: 20px;
+.skill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.skill span {
+    font-size: 20px;
+}
+
+/* LINKS */
+a {
     color: #7fd1b9;
-}
-
-/* CONTACT */
-.contact {
-    text-align: center;
-    margin-top: 50px;
-    padding: 30px;
-    border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 </style>
@@ -223,69 +145,70 @@ body {
 
 <body>
 
+<!-- NAV -->
 <div class="navbar">
 <a href="#about">About</a>
 <a href="#projects">Projects</a>
 <a href="#publications">Publications</a>
 <a href="#education">Education</a>
 <a href="#skills">Skills</a>
-<a href="#certs">Certifications</a>
+<a href="#certs">Certificates</a>
 <a href="#contact">Contact</a>
 </div>
 
-<!-- HEADER -->
-<div class="header">
+<!-- HERO -->
+<div class="hero">
 
-<div class="globe"></div>
-<div class="satellite s1"></div>
-<div class="satellite s2"></div>
-
-<img src="portfolio.jpeg" alt="Profile">
-
+<div class="hero-text">
 <h1>Suhana Dogra</h1>
-<p>GIS & Remote Sensing Researcher | Climate • Ecosystems • Spatial Modelling</p>
+<p>GIS & Remote Sensing Researcher | Climate • Ecosystem • Spatial Analysis</p>
 
 <a class="btn" href="mailto:dograsuhana25@gmail.com">Email</a>
 <a class="btn" href="https://linkedin.com" target="_blank">LinkedIn</a>
-
 </div>
 
-<div class="container">
+<!-- REAL EARTH GLOBE -->
+<canvas id="globe"></canvas>
+
+</div>
 
 <!-- ABOUT -->
 <section id="about">
-<div class="section-title">About</div>
+<div class="title">About</div>
 <div class="card">
-GIS and environmental science researcher focused on climate variability, ecosystem resilience, and spatial analysis of Himalayan landscapes.
+GIS researcher specializing in climate variability, ecosystem resilience, spatial modelling, and Himalayan environmental systems.
 </div>
 </section>
 
-<!-- PROJECT -->
+<!-- PROJECTS -->
 <section id="projects">
-<div class="section-title">Featured GIS Project</div>
+<div class="title">Featured GIS Project</div>
+
 <div class="card">
 Climate and Ecosystem Resilience Assessment of Jammu & Kashmir
-<span class="tag">Click for full methodology & maps</span>
 </div>
+
 </section>
 
 <!-- PUBLICATIONS -->
 <section id="publications">
-<div class="section-title">Research & Publications</div>
+<div class="title">Research & Publications</div>
 
 <div class="card">
+<a href="https://er.researchfloor.org/rainfall-variability-soil-susceptibility-and-landslide-vulnerability-in-udhampur-district-in-jammu-and-kashmir-india-a-spatiotemporal-assessment-from-2014-to-2024/?view=full" target="_blank">
 Published Paper: Rainfall Variability & Landslide Vulnerability
+</a>
 </div>
 
 <div class="card">
-Under Review: Landslide Susceptibility Analysis
+Under Review: Landslide Susceptibility Analysis – Western Himalayas
 </div>
 
 </section>
 
 <!-- EDUCATION -->
 <section id="education">
-<div class="section-title">Education</div>
+<div class="title">Education</div>
 
 <div class="card">
 M.Sc Geography — University of Jammu (2022–2024)
@@ -299,32 +222,86 @@ B.A Geography — University of Jammu (2019–2022)
 
 <!-- SKILLS -->
 <section id="skills">
-<div class="section-title">Skills</div>
+<div class="title">Skills</div>
 
-<div class="card">
-GIS | Remote Sensing | QGIS | ArcGIS | Python | Spatial Analysis | Cartography
+<div class="skills-grid">
+
+<div class="skill"><span>🗺️</span> GIS & Spatial Analysis</div>
+<div class="skill"><span>🛰️</span> Remote Sensing</div>
+<div class="skill"><span>📊</span> Raster & Vector Data</div>
+<div class="skill"><span>💻</span> Python (GIS workflows)</div>
+<div class="skill"><span>🌍</span> QGIS / ArcGIS</div>
+<div class="skill"><span>📡</span> Agisoft Metashape</div>
+<div class="skill"><span>🌱</span> Environmental Science</div>
+<div class="skill"><span>✍️</span> Academic Research Writing</div>
+
 </div>
-
 </section>
 
-<!-- CERTIFICATIONS -->
+<!-- CERTIFICATES -->
 <section id="certs">
-<div class="section-title">Certifications</div>
+<div class="title">Certificates</div>
 
-<div class="card">Geospatial Analysis & Python – MindLuster</div>
-<div class="card">Ecosystem & Natural Resources – IGNOU SWAYAM</div>
-<div class="card">Computer Applications Diploma – RSCIT</div>
-<div class="card">Climate Change Science – Alison</div>
+<div class="card">
+Geospatial Analysis & Python – MindLuster
+</div>
+
+<div class="card">
+Ecosystem & Natural Resources – IGNOU SWAYAM
+</div>
+
+<div class="card">
+Diploma in Computer Applications – RSCIT
+</div>
+
+<div class="card">
+Climate Change Science – Alison
+</div>
 
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact">
-📧 dograsuhana25@gmail.com<br>
+<section id="contact">
+<div class="title">Contact</div>
+
+<div class="card">
+📧 dograsuhana25@gmail.com <br>
 🔗 LinkedIn Profile
+</div>
+
 </section>
 
-</div>
+<!-- THREE.JS EARTH -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<script>
+let scene = new THREE.Scene();
+let camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+
+let renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("globe"), alpha: true });
+renderer.setSize(420, 420);
+
+let geometry = new THREE.SphereGeometry(2, 64, 64);
+
+let texture = new THREE.TextureLoader().load(
+"https://threejs.org/examples/textures/land_ocean_ice_cloud_2048.jpg"
+);
+
+let material = new THREE.MeshBasicMaterial({ map: texture });
+let globe = new THREE.Mesh(geometry, material);
+
+scene.add(globe);
+
+camera.position.z = 5;
+
+function animate() {
+    requestAnimationFrame(animate);
+    globe.rotation.y += 0.0025;
+    renderer.render(scene, camera);
+}
+
+animate();
+</script>
 
 </body>
 </html>
