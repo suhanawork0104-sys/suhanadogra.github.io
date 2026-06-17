@@ -5,27 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Suhana Dogra | GIS Research Lab</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* =========================
+   BASE
+========================= */
 body {
     margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(180deg, #f3f7f4 0%, #eef3f8 50%, #f7f4ef 100%);
+    font-family: "Inter", sans-serif;
     color: #1f2d2a;
+
+    /* GIS-style subtle terrain feel */
+    background:
+        radial-gradient(circle at 20% 20%, #eaf3ee 0%, transparent 25%),
+        radial-gradient(circle at 80% 30%, #e7eef5 0%, transparent 30%),
+        radial-gradient(circle at 50% 80%, #f3efe6 0%, transparent 35%),
+        #f7faf8;
 }
 
-/* NAV */
+/* =========================
+   NAVBAR (LAB STYLE)
+========================= */
 .navbar {
     position: sticky;
     top: 0;
-    background: rgba(255,255,255,0.9);
-    backdrop-filter: blur(10px);
+    background: #ffffff;
+    border-bottom: 1px solid #e6e6e6;
     display: flex;
     justify-content: center;
-    gap: 20px;
-    padding: 12px;
-    border-bottom: 1px solid #e6e6e6;
+    gap: 22px;
+    padding: 14px 10px;
     z-index: 1000;
 }
 
@@ -33,16 +43,19 @@ body {
     text-decoration: none;
     color: #2f4f4f;
     font-weight: 500;
+    font-size: 14px;
 }
 
 .navbar a:hover {
     color: #2b7a78;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 .header {
     text-align: center;
-    padding: 55px 20px 25px;
+    padding: 60px 20px 25px;
 }
 
 .header img {
@@ -51,63 +64,79 @@ body {
     border-radius: 50%;
     border: 4px solid #2b7a78;
     object-fit: cover;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 .header h1 {
-    margin: 12px 0 5px;
-    font-size: 40px;
+    margin: 14px 0 5px;
+    font-size: 42px;
+    font-weight: 700;
     color: #1f3b3a;
 }
 
 .header p {
-    color: #4d6a63;
+    color: #4f6b64;
+    font-weight: 400;
 }
 
-/* CONTAINER */
+/* =========================
+   CONTAINER
+========================= */
 .container {
     max-width: 1050px;
     margin: auto;
     padding: 20px;
 }
 
-/* SECTION TITLE */
+/* =========================
+   SECTION TITLE (LAB STYLE)
+========================= */
 .section-title {
-    font-size: 18px;
-    margin-top: 35px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 40px;
+    padding-left: 12px;
     border-left: 4px solid #2b7a78;
-    padding-left: 10px;
-    color: #2a3d3a;
+    color: #223632;
 }
 
-/* CARD */
+/* =========================
+   CARDS (CLEAN ACADEMIC)
+========================= */
 .card {
-    background: rgba(255,255,255,0.85);
-    padding: 16px;
+    background: #ffffff;
     margin-top: 12px;
-    border-radius: 14px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-    transition: 0.25s ease;
-    border: 1px solid rgba(0,0,0,0.05);
+    padding: 16px 18px;
+    border-radius: 12px;
+    border: 1px solid #e8eceb;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    transition: all 0.25s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.10);
 }
 
-/* TAG */
+/* =========================
+   TAGS
+========================= */
 .tag {
-    font-size: 12px;
-    padding: 4px 8px;
-    background: #e8f3ef;
-    border-radius: 20px;
     display: inline-block;
     margin-top: 6px;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 20px;
+    background: #e8f3ef;
     color: #2b7a78;
 }
 
-/* BUTTON */
+/* =========================
+   BUTTONS
+========================= */
 .btn {
     display: inline-block;
     margin: 8px;
@@ -116,13 +145,19 @@ body {
     text-decoration: none;
     background: #2b7a78;
     color: white;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background: #236864;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
+<!-- NAVIGATION -->
 <div class="navbar">
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
@@ -136,7 +171,7 @@ body {
 
 <!-- HEADER -->
 <div class="header">
-    <img src="portfolio.jpeg" alt="profile">
+    <img src="portfolio.jpeg" alt="Profile Photo">
     <h1>Suhana Dogra</h1>
     <p>GIS & Remote Sensing Researcher | Climate • Ecosystems • Spatial Analysis</p>
 
@@ -171,15 +206,15 @@ Early-career researcher in geospatial and environmental science with specializat
 
 <a class="card" target="_blank"
 href="https://er.researchfloor.org/rainfall-variability-soil-susceptibility-and-landslide-vulnerability-in-udhampur-district-in-jammu-and-kashmir-india-a-spatiotemporal-assessment-from-2014-to-2024/?view=full">
-Published: Rainfall Variability, Soil Susceptibility & Landslide Vulnerability in Udhampur District, J&K
+<b>Published:</b> Rainfall Variability, Soil Susceptibility & Landslide Vulnerability (Udhampur, J&K)
 </a>
 
 <div class="card">
-Under Review: Landslide Susceptibility Analysis – Western Himalayas
+<b>Under Review:</b> Landslide Susceptibility Analysis – Western Himalayas
 </div>
 
 <div class="card">
-Course Project: Environmental Determinants of Health
+<b>Course Project:</b> Environmental Determinants of Health
 </div>
 
 </section>
@@ -189,7 +224,7 @@ Course Project: Environmental Determinants of Health
 <div class="section-title">Education</div>
 
 <div class="card">
-<b>M.A./M.Sc. Geography — University of Jammu, India</b><br>
+<b>M.A./M.Sc. Geography — University of Jammu</b><br><br>
 Dec 2022 – Jul 2024<br><br>
 
 • Specialisation in GIS, remote sensing, and environmental geography<br>
@@ -198,7 +233,7 @@ Dec 2022 – Jul 2024<br><br>
 </div>
 
 <div class="card">
-<b>B.A. Geography — University of Jammu, India</b><br>
+<b>B.A. Geography — University of Jammu</b><br><br>
 Sep 2019 – Aug 2022<br><br>
 
 • Foundational studies in physical and human geography
@@ -223,7 +258,7 @@ Sep 2019 – Aug 2022<br><br>
 <div class="card">
 GIS: ArcGIS, QGIS, Spatial Analysis<br>
 Remote Sensing: NDVI, Landsat, Raster Analysis<br>
-Programming: Python (basic geospatial workflows)
+Programming: Python (Geospatial Workflows)
 </div>
 
 </section>
@@ -244,8 +279,8 @@ Programming: Python (basic geospatial workflows)
 <div class="section-title">Get in Touch</div>
 
 <div class="card">
-📧 Email: <b>dograsuhana25@gmail.com</b><br>
-🔗 LinkedIn: available via header button
+📧 <b>Email:</b> dograsuhana25@gmail.com<br>
+🔗 LinkedIn: via header button
 </div>
 
 </section>
