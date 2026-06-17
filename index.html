@@ -10,9 +10,6 @@
 
 <style>
 
-/* =========================
-   BASE
-========================= */
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
@@ -22,9 +19,7 @@ body {
     overflow-x: hidden;
 }
 
-/* =========================
-   STRONG VISIBLE CONTOURS (FIXED)
-========================= */
+/* CONTEXTUAL CONTOUR BACKGROUND (VISIBLE) */
 body::before {
     content: "";
     position: fixed;
@@ -32,38 +27,34 @@ body::before {
 
     background-image:
         repeating-linear-gradient(0deg,
-        rgba(255, 220, 170, 0.10) 0px,
-        rgba(255, 220, 170, 0.10) 1px,
+        rgba(255, 220, 170, 0.12) 0px,
+        rgba(255, 220, 170, 0.12) 1px,
         transparent 1px,
         transparent 45px),
 
         repeating-linear-gradient(90deg,
-        rgba(255, 220, 170, 0.08) 0px,
-        rgba(255, 220, 170, 0.08) 1px,
+        rgba(255, 220, 170, 0.09) 0px,
+        rgba(255, 220, 170, 0.09) 1px,
         transparent 1px,
         transparent 45px),
 
-        radial-gradient(circle at 20% 30%, rgba(80,150,200,0.15), transparent 40%),
-        radial-gradient(circle at 70% 70%, rgba(100,180,140,0.10), transparent 40%);
+        radial-gradient(circle at 25% 30%, rgba(80,150,200,0.18), transparent 45%),
+        radial-gradient(circle at 70% 70%, rgba(100,180,140,0.12), transparent 45%);
 
     opacity: 1;
     pointer-events: none;
 }
 
-/* =========================
-   LAYOUT
-========================= */
+/* LAYOUT */
 .container {
     width: 85%;
     margin: auto;
     padding: 40px 0;
 }
 
-/* =========================
-   HEADER TYPOGRAPHY (YOUR EXACT ORDER)
-========================= */
+/* HEADER */
 .name {
-    font-size: 44px;
+    font-size: 46px;
     font-weight: 700;
     margin-bottom: 6px;
 }
@@ -79,9 +70,7 @@ body::before {
     margin-top: 4px;
 }
 
-/* =========================
-   SECTION CARD (ONE PER SECTION)
-========================= */
+/* SECTION BOX */
 .section {
     background: rgba(255,255,255,0.96);
     color: #1b1b1b;
@@ -95,19 +84,17 @@ body::before {
 }
 
 .section:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
 }
 
-/* section headings */
+/* HEADINGS */
 .section h2 {
     margin-top: 0;
     font-size: 18px;
     color: #0a1f33;
 }
 
-/* =========================
-   GREEN LINKS (ONLY LINKS)
-========================= */
+/* LINKS (GREEN + NEW TAB) */
 a {
     color: #1f8f4a;
     font-weight: 600;
@@ -118,9 +105,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* =========================
-   SKILLS (CLEAN GRID)
-========================= */
+/* SKILLS */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
@@ -132,31 +117,17 @@ a:hover {
     padding: 14px;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    transition: 0.3s;
 }
 
 .skill-card:hover {
     transform: scale(1.03);
 }
 
-/* =========================
-   HOVER CARDS FOR RESEARCH
-========================= */
+/* RESEARCH BLOCK */
 .research-card {
     padding: 12px;
     border-left: 4px solid #1f8f4a;
     margin-bottom: 12px;
-}
-
-.research-card:hover {
-    background: #f3f9f6;
-}
-
-/* =========================
-   CONTACT
-========================= */
-.contact {
-    text-align: center;
 }
 
 </style>
@@ -166,7 +137,7 @@ a:hover {
 
 <div class="container">
 
-<!-- HEADER (YOUR EXACT FORMAT) -->
+<!-- HEADER -->
 <div class="name">Suhana Dogra</div>
 
 <div class="address">Udhampur, Jammu & Kashmir, India</div>
@@ -177,7 +148,7 @@ a:hover {
 <div class="section">
 <h2>About Me</h2>
 <p>
-I am an early-career researcher in geospatial and environmental science specializing in GIS, remote sensing, and spatial analysis. My work focuses on climate variability, land-use change, and environmental risk assessment in the Himalayan region. I am currently seeking research assistantship opportunities in applied geoscience research.
+Early-career researcher in geospatial and environmental science specializing in GIS, remote sensing, spatial analysis, climate variability, land-use change, and environmental risk assessment in the Himalayan region.
 </p>
 </div>
 
@@ -187,11 +158,40 @@ I am an early-career researcher in geospatial and environmental science speciali
 
 <p><b>Climate and Ecosystem Resilience Assessment of Jammu & Kashmir Using GIS and Remote Sensing</b></p>
 
-<p>Click below to view detailed project outputs:</p>
-
 <p>
-<a href="#">View Project → ACI, CSI, ESI, RI, Maps</a>
+A GIS-based multi-criteria environmental assessment project integrating climate, vegetation, and terrain variables to evaluate ecosystem resilience and vulnerability patterns.
 </p>
+</div>
+
+<!-- EDUCATION -->
+<div class="section">
+<h2>Education</h2>
+
+<p><b>M.A./M.Sc Geography</b> — University of Jammu (2022–2024)</p>
+<p>GIS, Remote Sensing, Environmental Geography, Spatial Analysis</p>
+
+<br>
+
+<p><b>B.A Geography</b> — University of Jammu (2019–2022)</p>
+<p>Physical and Human Geography Foundation</p>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="section">
+<h2>Experience</h2>
+
+<p><b>GIS Analyst — DronaMaps Pvt. Ltd</b></p>
+<p>Processed drone imagery, created spatial datasets, and supported environmental analysis</p>
+
+<br>
+
+<p><b>GIS Intern — GIS Vision India</b></p>
+<p>Digitisation, spatial risk mapping, and cartographic outputs</p>
+
+<br>
+
+<p><b>Online Tutor (Part-time) — Preply</b></p>
+<p>Teaching geography and environmental science concepts to international students</p>
 </div>
 
 <!-- RESEARCH -->
@@ -200,25 +200,33 @@ I am an early-career researcher in geospatial and environmental science speciali
 
 <div class="research-card">
 <b>Research Assistant — Dr. Rajan Bharti</b><br>
-Department of Geography, Government Degree College, Chenani, Udhampur<br><br>
-
-• Contributed to data analysis, literature review, and manuscript preparation<br>
-• Supported spatial and statistical analysis for climate–landscape studies<br>
-• Collaborated on two peer-reviewed papers
+Department of Geography, Government Degree College, Chenani, Udhampur
+<br><br>
+• Data analysis, literature review, manuscript preparation<br>
+• Spatial and statistical analysis for climate–landscape studies<br>
+• Collaboration on two peer-reviewed papers
 </div>
 
-<p><b>Published Paper:</b><br>
-<a href="https://er.researchfloor.org/rainfall-variability-soil-susceptibility-and-landslide-vulnerability-in-udhampur-district-in-jammu-and-kashmir-india-a-spatiotemporal-assessment-from-2014-to-2024/?view=full">
-View Publication
+<p>
+<b>Published Paper:</b><br>
+<a href="https://er.researchfloor.org/rainfall-variability-soil-susceptibility-and-landslide-vulnerability-in-udhampur-district-in-jammu-and-kashmir-india-a-spatiotemporal-assessment-from-2014-to-2024/?view=full"
+target="_blank">
+Rainfall Variability, Soil Susceptibility, and Landslide Vulnerability in Udhampur
 </a>
 </p>
 
-<p><b>Under Review:</b><br>
-<a href="#">View Paper</a> Landslide Susceptibility Analysis – Western Himalayas
+<p>
+<b>Under Review:</b><br>
+<a href="#" target="_blank">
+Landslide Susceptibility Analysis – Western Himalayas
+</a>
 </p>
 
-<p><b>Course Project:</b><br>
-<a href="#">View Project</a> Environmental Determinants of Health
+<p>
+<b>Course Project:</b><br>
+<a href="#" target="_blank">
+Environmental Determinants of Health
+</a>
 </p>
 
 </div>
@@ -231,39 +239,30 @@ View Publication
 
 <div class="skill-card">
 🗺️ GIS & Spatial Analysis<br>
-QGIS, ArcGIS, raster & vector data
+QGIS, ArcGIS, Raster & Vector Data
 </div>
 
 <div class="skill-card">
-💻 Computational Skills<br>
-Python for geospatial workflows
+💻 Python & Geospatial Workflows<br>
+Spatial analysis and visualization
 </div>
 
 <div class="skill-card">
 🌱 Environmental Research<br>
-Climate & ecosystem analysis
+Climate studies and scientific writing
 </div>
 
 </div>
 </div>
 
-<!-- CERTIFICATES -->
+<!-- CERT NOTE (optional placeholder kept clean) -->
 <div class="section">
 <h2>Certificates</h2>
 
-<p>Geospatial Analysis & Python – MindLuster → <a href="#">View Certificate</a></p>
-<p>Ecosystem & Natural Resources – IGNOU → <a href="#">View Certificate</a></p>
-<p>Diploma in Computer Applications – RSCIT → <a href="#">View Certificate</a></p>
-<p>Climate Change Science – Alison → <a href="#">View Certificate</a></p>
-
-</div>
-
-<!-- CONTACT -->
-<div class="section contact">
-<h2>Contact</h2>
-
-<p>📧 <a href="mailto:dograsuhana25@gmail.com">dograsuhana25@gmail.com</a></p>
-<p>🔗 <a href="https://www.linkedin.com/in/suhana-dogra-ba5233301/" target="_blank">LinkedIn</a></p>
+<p>Geospatial Analysis & Python – MindLuster → <a href="#" target="_blank">View Certificate</a></p>
+<p>Ecosystem & Natural Resources – IGNOU SWAYAM → <a href="#" target="_blank">View Certificate</a></p>
+<p>Diploma in Computer Applications – RSCIT → <a href="#" target="_blank">View Certificate</a></p>
+<p>Climate Change Science – Alison → <a href="#" target="_blank">View Certificate</a></p>
 
 </div>
 
