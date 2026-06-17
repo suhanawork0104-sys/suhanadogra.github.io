@@ -3,114 +3,235 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Suhana Dogra | GIS Research Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Suhana Dogra | GIS Research Lab</title>
 
 <style>
 
-body {
-    margin: 0;
-    font-family: "Inter", sans-serif;
-    background: #0a1f33;
-    color: #eaf2f8;
-    text-align: center;
+/* =========================
+GLOBAL STYLE
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
 }
 
-/* CONTEXT CONTOURS */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background-image:
-        repeating-linear-gradient(0deg,
-        rgba(255, 220, 170, 0.12) 0px,
-        rgba(255, 220, 170, 0.12) 1px,
-        transparent 1px,
-        transparent 45px),
-
-        repeating-linear-gradient(90deg,
-        rgba(255, 220, 170, 0.09) 0px,
-        rgba(255, 220, 170, 0.09) 1px,
-        transparent 1px,
-        transparent 45px);
-
-    pointer-events: none;
+body{
+background:#0b1b2b;
+color:white;
+overflow-x:hidden;
 }
 
-/* LAYOUT */
-.container {
-    width: 85%;
-    margin: auto;
-    padding: 40px 0;
+/* Contour Background */
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+repeating-linear-gradient(
+45deg,
+rgba(255,255,255,0.05) 0px,
+rgba(255,255,255,0.05) 1px,
+transparent 1px,
+transparent 40px
+),
+repeating-linear-gradient(
+-45deg,
+rgba(0,255,200,0.04) 0px,
+transparent 80px
+);
+z-index:-2;
 }
 
-/* HEADER */
-.name {
-    font-size: 46px;
-    font-weight: 700;
+/* =========================
+HEADER
+========================= */
+
+header{
+text-align:center;
+padding:50px 20px 20px;
 }
 
-.address {
-    font-size: 18px;
-    color: #cfe3f3;
+header h1{
+font-size:42px;
+font-weight:bold;
 }
 
-.coords {
-    font-size: 12px;
-    color: #8fb3cc;
+header h2{
+font-size:18px;
+font-weight:400;
+margin-top:5px;
+opacity:0.9;
 }
 
-/* SECTION BOX */
-.section {
-    background: rgba(255,255,255,0.96);
-    color: #1b1b1b;
-    border-radius: 16px;
-    padding: 22px;
-    margin: 28px auto;
-    width: 78%;
-    text-align: left;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+header p{
+font-size:12px;
+opacity:0.7;
 }
 
-.section h2 {
-    margin-top: 0;
-    color: #0a1f33;
-    font-size: 18px;
+/* =========================
+PROFILE IMAGE
+========================= */
+
+.profile{
+display:flex;
+justify-content:center;
+margin-top:20px;
 }
 
-/* GREEN LINKS ONLY */
-a {
-    color: #1f8f4a;
-    font-weight: 600;
-    text-decoration: none;
+.profile img{
+width:160px;
+height:160px;
+border-radius:50%;
+border:3px solid #3ddc97;
+object-fit:cover;
 }
 
-a:hover {
-    text-decoration: underline;
+/* =========================
+SECTION BOX
+========================= */
+
+.section{
+background:rgba(255,255,255,0.07);
+margin:40px auto;
+padding:25px;
+width:85%;
+border-radius:15px;
+backdrop-filter: blur(6px);
 }
 
-/* SKILLS */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    gap: 15px;
+/* =========================
+PROJECT CARD
+========================= */
+
+.project-title{
+font-size:20px;
+font-weight:bold;
 }
 
-.skill-card {
-    background: #fff;
-    padding: 14px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+.link{
+color:#2ef7a6;
+cursor:pointer;
+text-decoration:none;
 }
 
-/* RESEARCH */
-.research-card {
-    border-left: 4px solid #1f8f4a;
-    padding-left: 12px;
-    margin-bottom: 15px;
+.link:hover{
+text-decoration:underline;
+}
+
+/* =========================
+FLOWCHART
+========================= */
+
+.flow{
+text-align:center;
+margin-top:20px;
+line-height:2;
+font-family:monospace;
+}
+
+/* =========================
+MAP GRID
+========================= */
+
+.map-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+margin-top:20px;
+}
+
+.map-card{
+background:rgba(255,255,255,0.05);
+padding:10px;
+border-radius:10px;
+text-align:center;
+transition:0.3s;
+}
+
+.map-card:hover{
+transform:scale(1.05);
+}
+
+.map-card img{
+width:100%;
+border-radius:10px;
+}
+
+/* =========================
+SKILLS
+========================= */
+
+.skills{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+}
+
+.skill{
+background:rgba(255,255,255,0.08);
+padding:10px;
+border-radius:10px;
+}
+
+/* =========================
+CERTIFICATES
+========================= */
+
+.cert a{
+display:block;
+color:#2ef7a6;
+margin-top:5px;
+}
+
+/* =========================
+CONTACT
+========================= */
+
+footer{
+text-align:center;
+padding:30px;
+margin-top:50px;
+}
+
+/* =========================
+ANIMATED GLOBE
+========================= */
+
+.globe{
+width:120px;
+height:120px;
+border-radius:50%;
+background:
+radial-gradient(circle at 30% 30%, #7fd3ff, #1b4f72);
+margin:30px auto;
+position:relative;
+animation:spin 8s linear infinite;
+}
+
+@keyframes spin{
+from{transform:rotate(0deg);}
+to{transform:rotate(360deg);}
+}
+
+/* satellites */
+.sat{
+position:absolute;
+width:6px;
+height:6px;
+background:white;
+border-radius:50%;
+animation:orbit 4s linear infinite;
+}
+
+@keyframes orbit{
+from{transform:rotate(0deg) translateX(70px) rotate(0deg);}
+to{transform:rotate(360deg) translateX(70px) rotate(-360deg);}
 }
 
 </style>
@@ -118,116 +239,119 @@ a:hover {
 
 <body>
 
-<div class="container">
-
 <!-- HEADER -->
-<div class="name">Suhana Dogra</div>
-<div class="address">Udhampur, Jammu & Kashmir, India</div>
-<div class="coords">32.9156° N, 75.1417° E</div>
+<header>
+<h1>Suhana Dogra</h1>
+<h2>Udhampur, Jammu & Kashmir, India</h2>
+<p>32.9156° N, 75.1417° E</p>
+</header>
+
+<!-- PROFILE -->
+<div class="profile">
+<img src="portfolio.jpeg" alt="profile">
+</div>
 
 <!-- ABOUT -->
 <div class="section">
 <h2>About Me</h2>
 <p>
-I am an early-career researcher in geospatial and environmental science, specializing in GIS, remote sensing, and spatial analysis. My work focuses on climate variability, land-use change, and environmental risk assessment in the Himalayan region. I have experience in academic research, spatial data analysis, and scientific writing, with interests in climate–environment interactions and sustainable development.
+I am an early-career researcher in geospatial and environmental science, specializing in GIS, remote sensing, and spatial analysis. My work focuses on climate variability, land-use change, and environmental risk assessment in the Himalayan region.
 </p>
 </div>
 
-<!-- FEATURED PROJECT (FIXED CLICKABLE STRUCTURE) -->
+<!-- FEATURED PROJECT -->
 <div class="section">
+
 <h2>Featured Research Project</h2>
 
-<p><b>Climate and Ecosystem Resilience Assessment of Jammu & Kashmir Using GIS and Remote Sensing</b></p>
-
-<p>
-<a href="#" target="_blank">View Project →</a>
+<p class="project-title">
+Climate and Ecosystem Resilience of Jammu and Kashmir
 </p>
+
+<p>GIS-Based Spatial Modeling using QGIS</p>
+
+<a class="link" href="paper1.html" target="_blank">View Project</a>
+
+<div class="flow">
+WorldClim → CSI  
+<br>
+Landsat + NDVI → ACI  
+<br>
+Slope + Land Cover → ESI  
+<br>
+ACI + CSI + ESI → RI
 </div>
 
-<!-- RESEARCH (MOVED ABOVE EDUCATION) -->
+</div>
+
+<!-- MAPS -->
 <div class="section">
-<h2>Research Experience & Outputs</h2>
+<h2>Spatial Outputs</h2>
 
-<div class="research-card">
-<b>Research Assistant — Dr. Rajan Bharti</b><br>
-Department of Geography, Government Degree College, Chenani, Udhampur<br><br>
+<div class="map-grid">
 
-• Data analysis, literature review, manuscript preparation<br>
-• Spatial and statistical analysis for climate–landscape studies<br>
-• Collaboration on two peer-reviewed papers
+<div class="map-card">
+<img src="ACI.jpg">
+<p>ACI</p>
 </div>
+
+<div class="map-card">
+<img src="CSI.jpg">
+<p>CSI</p>
+</div>
+
+<div class="map-card">
+<img src="ESI.jpg">
+<p>ESI</p>
+</div>
+
+<div class="map-card">
+<img src="RI.jpg">
+<p>RI</p>
+</div>
+
+</div>
+</div>
+
+<!-- RESEARCH -->
+<div class="section">
+<h2>Research & Publications</h2>
 
 <p>
-<b>Published Paper:</b><br>
-<a href="https://er.researchfloor.org/rainfall-variability-soil-susceptibility-and-landslide-vulnerability-in-udhampur-district-in-jammu-and-kashmir-india-a-spatiotemporal-assessment-from-2014-to-2024/?view=full"
-target="_blank">
-Rainfall Variability, Soil Susceptibility, and Landslide Vulnerability in Udhampur
+Published:
+<br>
+<a class="link" href="https://er.researchfloor.org/rainfall-variability-soil-susceptibility-and-landslide-vulnerability-in-udhampur-district-in-jammu-and-kashmir-india-a-spatiotemporal-assessment-from-2014-to-2024/?view=full" target="_blank">
+Rainfall Variability, Soil Susceptibility and Landslide Vulnerability
 </a>
 </p>
 
 <p>
-<b>Under Review:</b><br>
-<a href="#" target="_blank">Landslide Susceptibility Analysis – Western Himalayas</a>
+Under Review:
+<br>
+<a class="link" href="paper1.html" target="_blank">Landslide Susceptibility Analysis – Western Himalayas</a>
+<br>
+<a class="link" href="courseProject.html" target="_blank">Environmental Determinants of Health</a>
 </p>
 
-<p>
-<b>Course Project:</b><br>
-<a href="#" target="_blank">Environmental Determinants of Health</a>
-</p>
 </div>
 
 <!-- EDUCATION -->
 <div class="section">
 <h2>Education</h2>
-
-<p><b>M.A./M.Sc Geography</b> — University of Jammu (2022–2024)</p>
-<p>GIS, Remote Sensing, Environmental Geography, Spatial Analysis</p>
-
-<br>
-
-<p><b>B.A Geography</b> — University of Jammu (2019–2022)</p>
-<p>Physical and Human Geography Foundation</p>
-</div>
-
-<!-- EXPERIENCE -->
-<div class="section">
-<h2>Experience</h2>
-
-<p><b>GIS Analyst — DronaMaps Pvt. Ltd</b></p>
-<p>Processed drone imagery, created spatial datasets, and supported environmental analysis</p>
-
-<br>
-
-<p><b>GIS Intern — GIS Vision India</b></p>
-<p>Digitisation, spatial risk mapping, and cartographic outputs</p>
-
-<br>
-
-<p><b>Online Tutor (Part-time) — Preply</b></p>
-<p>Teaching geography and environmental science concepts internationally</p>
+<p>M.A./M.Sc Geography — University of Jammu (2022–2024)</p>
+<p>B.A Geography — University of Jammu (2019–2022)</p>
 </div>
 
 <!-- SKILLS -->
 <div class="section">
 <h2>Skills</h2>
-
-<div class="skills-grid">
-
-<div class="skill-card">
-🗺️ GIS & Spatial Analysis<br>
-QGIS, ArcGIS, raster/vector data
-</div>
-
-<div class="skill-card">
-💻 Python & Geospatial Workflows<br>
-Spatial analysis & visualization
-</div>
-
-<div class="skill-card">
-🌱 Environmental Research<br>
-Climate variability & ecosystem studies
-</div>
-
+<div class="skills">
+<div class="skill">GIS & Spatial Analysis</div>
+<div class="skill">QGIS / ArcGIS</div>
+<div class="skill">Remote Sensing</div>
+<div class="skill">Python (GIS workflows)</div>
+<div class="skill">Cartography</div>
+<div class="skill">Scientific Writing</div>
 </div>
 </div>
 
@@ -235,23 +359,39 @@ Climate variability & ecosystem studies
 <div class="section">
 <h2>Certificates</h2>
 
-<p>Geospatial Analysis & Python → <a href="#" target="_blank">View Certificate</a></p>
-<p>Ecosystem & Natural Resources → <a href="#" target="_blank">View Certificate</a></p>
-<p>Diploma in Computer Applications → <a href="#" target="_blank">View Certificate</a></p>
-<p>Climate Change Science → <a href="#" target="_blank">View Certificate</a></p>
+<div class="cert">
+Geospatial Analysis & Python
+<a href="mindluster_certificate.pdf" target="_blank">View Certificate</a>
+</div>
+
+<div class="cert">
+Ecosystem & Natural Resources (IGNOU)
+<a href="swayan_environment_certificate.pdf" target="_blank">View Certificate</a>
+</div>
+
+<div class="cert">
+Computer Diploma
+<a href="Computer_Diploma.pdf" target="_blank">View Certificate</a>
+</div>
+
+<div class="cert">
+Climate Change Science
+<a href="alison.jpeg" target="_blank">View Certificate</a>
+</div>
 
 </div>
 
 <!-- CONTACT -->
-<div class="section">
-<h2>Contact</h2>
+<footer>
+<p>Email: <a class="link" href="mailto:dograsuhana25@gmail.com">dograsuhana25@gmail.com</a></p>
 
-<p>📧 <a href="mailto:dograsuhana25@gmail.com">Email Me</a></p>
-<p>🔗 <a href="https://www.linkedin.com/in/suhana-dogra-ba5233301/" target="_blank">LinkedIn</a></p>
-
+<div class="globe">
+<div class="sat"></div>
+<div class="sat" style="animation-delay:2s;"></div>
 </div>
 
-</div>
+<p>GIS Research Lab Portfolio</p>
+</footer>
 
 </body>
 </html>
