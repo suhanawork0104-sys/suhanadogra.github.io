@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GIS Research Portfolio</title>
+<title>Suhana Dogra | GIS Research Portfolio</title>
 
 <style>
+
 body{
 margin:0;
 font-family:Arial;
-background:#0b1f33;
+background:#0b2238;
 color:white;
+overflow-x:hidden;
 }
 
-/* CONTOUR BACKGROUND */
+/* CONTEXT BACKGROUND (CONTOUR STYLE) */
 body::before{
 content:"";
 position:fixed;
 inset:0;
 background:
-repeating-linear-gradient(45deg, rgba(255,255,255,0.04) 0 2px, transparent 2px 60px),
-repeating-linear-gradient(-45deg, rgba(0,200,255,0.03) 0 2px, transparent 2px 80px);
+repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 60px),
+repeating-linear-gradient(-45deg, rgba(0,180,255,0.02) 0 2px, transparent 2px 80px);
 z-index:-1;
 }
 
 /* HEADER */
 header{
 text-align:center;
-padding:40px;
+padding:40px 20px 10px;
 }
 
 h1{
@@ -53,33 +56,42 @@ margin:20px;
 }
 
 .profile img{
-width:220px;
-height:220px;
+width:240px;
+height:240px;
 border-radius:50%;
-border:3px solid #3de6a7;
+border:4px solid #3de6a7;
 object-fit:cover;
 }
 
-/* BOX */
+/* SECTION */
 .section{
 width:80%;
 margin:20px auto;
 background:rgba(255,255,255,0.06);
 padding:25px;
 border-radius:12px;
+transition:0.3s ease;
+}
+
+.section:hover{
+transform:translateY(-4px);
+background:rgba(255,255,255,0.09);
 }
 
 /* LINKS */
 a{
-color:#3de6a7;
+color:#2ef7a6;
 text-decoration:none;
 }
-a:hover{text-decoration:underline;}
 
-/* PROJECT BUTTON */
+a:hover{
+text-decoration:underline;
+}
+
+/* BUTTON */
 .btn{
 display:inline-block;
-padding:10px 15px;
+padding:10px 14px;
 background:#1dbf73;
 border-radius:8px;
 margin-top:10px;
@@ -99,31 +111,40 @@ border-radius:8px;
 text-align:center;
 }
 
-/* CERTIFICATES */
-.cert a{
-display:block;
-margin-top:5px;
+/* EXPERIENCE BLOCK */
+.block{
+margin-bottom:10px;
+line-height:1.5;
 }
 
 /* FOOTER */
 footer{
 text-align:center;
-padding:30px;
-margin-top:40px;
+padding:40px;
+margin-top:30px;
 }
+
+/* HOVER LINE EFFECT */
+.section h2{
+border-left:4px solid #2ef7a6;
+padding-left:10px;
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
 <h1>Suhana Dogra</h1>
 <div class="sub">Udhampur, Jammu & Kashmir, India</div>
 <div class="coords">32.9156° N, 75.1417° E</div>
 </header>
 
+<!-- PROFILE -->
 <div class="profile">
-<img src="portfolio.jpeg">
+<img src="portfolio.jpeg" alt="profile">
 </div>
 
 <!-- ABOUT -->
@@ -139,7 +160,6 @@ I am an early-career researcher in geospatial and environmental science, special
 <h2>Featured Research Project</h2>
 
 <h3>Climate and Ecosystem Resilience of Jammu & Kashmir</h3>
-
 <p>GIS-Based Spatial Modeling using QGIS</p>
 
 <a class="btn" href="project.html" target="_blank">View Project</a>
@@ -147,78 +167,92 @@ I am an early-career researcher in geospatial and environmental science, special
 
 <!-- RESEARCH OUTPUTS -->
 <div class="section">
-<h2>Research Outputs</h2>
+<h2>Research Experience & Outputs</h2>
 
-<p>
-Research Assistant — Dr. Rajan Bharti<br>
-Collaborated on GIS-based Himalayan environmental research and two peer-reviewed papers.
-</p>
+<div class="block">
+🔹 Research Assistant — Dr. Rajan Bharti (Dept. of Geography, GDC Chenani)<br>
+• Data analysis, literature review, manuscript preparation<br>
+• Spatial & statistical analysis for Himalayan environmental studies<br>
+</div>
 
-<p>
-Published:<br>
+<div class="block">
+📄 Published Paper:<br>
 <a href="https://er.researchfloor.org/rainfall-variability-soil-susceptibility-and-landslide-vulnerability-in-udhampur-district-in-jammu-and-kashmir-india-a-spatiotemporal-assessment-from-2014-to-2024/?view=full" target="_blank">
-Rainfall Variability & Landslide Vulnerability (Published)
+Rainfall Variability & Landslide Vulnerability (Udhampur)
 </a>
-</p>
+</div>
 
-<p>
-Under Review:<br>
-<a href="project.html" target="_blank">Landslide Susceptibility Analysis – Western Himalayas</a>
-</p>
+<div class="block">
+📄 Under Review:<br>
+<a href="paper1.html" target="_blank">Landslide Susceptibility Analysis – Western Himalayas</a><br>
+<a href="courseproject.html" target="_blank">Environmental Determinants of Health – Course Project</a>
+</div>
+
 </div>
 
 <!-- EDUCATION -->
 <div class="section">
 <h2>Education</h2>
-<p>M.A./M.Sc Geography — University of Jammu (2022–2024)</p>
-<p>B.A Geography — University of Jammu (2019–2022)</p>
+
+<p><b>M.A./M.Sc Geography</b> — University of Jammu (2022–2024)</p>
+• GIS, Remote Sensing, Environmental Geography<br>
+• Climate–environment spatial analysis<br>
+• Dissertation: rainfall–vegetation relationships in Himalayas<br><br>
+
+<p><b>B.A Geography</b> — University of Jammu (2019–2022)</p>
+• Physical & Human Geography foundation
 </div>
 
-<!-- WORK EXPERIENCE -->
+<!-- EXPERIENCE -->
 <div class="section">
-<h2>Work Experience</h2>
+<h2>Experience</h2>
 
-<p>GIS Analyst — DronaMaps Pvt. Ltd</p>
-<p>GIS Intern — GIS Vision India</p>
-<p>Online Tutor — Preply (Part-time)</p>
+<p><b>GIS Analyst</b> — DronaMaps Pvt. Ltd</p>
+• Drone imagery processing, orthomosaics, spatial datasets<br><br>
+
+<p><b>GIS Intern</b> — GIS Vision India</p>
+• Digitisation, spatial risk mapping, cartographic outputs<br><br>
+
+<p><b>Online Tutor (Part-time)</b> — Preply</p>
+• Geography & environmental science teaching (international students)
 </div>
 
 <!-- SKILLS -->
 <div class="section">
 <h2>Skills</h2>
+
 <div class="skills">
-<div class="skill">GIS</div>
+<div class="skill">GIS & Spatial Analysis</div>
 <div class="skill">QGIS / ArcGIS</div>
 <div class="skill">Remote Sensing</div>
-<div class="skill">Python GIS</div>
+<div class="skill">Python (GIS)</div>
 <div class="skill">Cartography</div>
-<div class="skill">Research Writing</div>
+<div class="skill">Scientific Writing</div>
 </div>
 </div>
 
-<!-- CERTIFICATES -->
+<!-- LANGUAGES -->
 <div class="section">
-<h2>Certificates</h2>
-
-<p>Mindluster Python GIS</p>
-<a href="Mindluster_Certificate-1.pdf" target="_blank">View Certificate</a>
-
-<p>IGNOU Ecosystem</p>
-<a href="swayan_environment_certificate.pdf" target="_blank">View Certificate</a>
-
-<p>Computer Diploma</p>
-<a href="Computer_Diploma.pdf" target="_blank">View Certificate</a>
-
-<p>Climate Science</p>
-<a href="alison.jpeg" target="_blank">View Certificate</a>
-
+<h2>Languages</h2>
+<p>English – C1</p>
+<p>Hindi – Native</p>
+<p>Dogri – Native</p>
 </div>
 
 <!-- CONTACT -->
 <footer>
-<h3>Contact</h3>
-<p>Email: <a href="mailto:dograsuhana25@gmail.com">dograsuhana25@gmail.com</a></p>
-<p><a href="https://www.linkedin.com/in/suhana-dogra-ba5233301/" target="_blank">LinkedIn Profile</a></p>
+<h2>Contact</h2>
+
+<p>
+Email: <a href="mailto:dograsuhana25@gmail.com">dograsuhana25@gmail.com</a>
+</p>
+
+<p>
+LinkedIn:
+<a href="https://www.linkedin.com/in/suhana-dogra-ba5233301/" target="_blank">
+Profile
+</a>
+</p>
 </footer>
 
 </body>
