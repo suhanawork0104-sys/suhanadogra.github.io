@@ -5,103 +5,80 @@
 <title>Suhana Dogra | GIS Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <style>
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background: #071a2f;
-  color: white;
-  overflow-x: hidden;
+body{
+margin:0;
+font-family:Arial;
+background:#0b1f33;
+color:white;
 }
 
-/* GIS contour background */
-body::before {
-  content: "";
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
-  opacity: 0.2;
-  z-index: -2;
+section{
+max-width:1000px;
+margin:auto;
+padding:50px 20px;
 }
 
-/* layout */
-section {
-  max-width: 1000px;
-  margin: auto;
-  padding: 60px 20px;
+h2{
+border-bottom:1px solid rgba(255,255,255,0.2);
+padding-bottom:10px;
 }
 
-/* header */
-.hero {
-  text-align: center;
-  padding-top: 80px;
+.card{
+background:rgba(255,255,255,0.08);
+padding:18px;
+margin-top:15px;
+border-radius:10px;
+transition:0.3s;
 }
 
-.name {
-  font-size: 48px;
-  font-weight: 700;
+.card:hover{
+transform:scale(1.02);
+background:rgba(255,255,255,0.12);
 }
 
-.location {
-  font-size: 18px;
-  opacity: 0.9;
+a{
+color:#39d98a;
+text-decoration:none;
 }
 
-.coords {
-  font-size: 12px;
-  opacity: 0.6;
+a:hover{text-decoration:underline;}
+
+/* HERO */
+.hero{
+text-align:center;
+padding-top:70px;
 }
 
-/* cards */
-.card {
-  background: rgba(255,255,255,0.08);
-  padding: 20px;
-  border-radius: 12px;
-  margin-top: 15px;
-  transition: 0.3s;
+.name{
+font-size:42px;
+font-weight:bold;
 }
 
-.card:hover {
-  transform: scale(1.02);
-  background: rgba(255,255,255,0.12);
+.small{
+opacity:0.8;
 }
 
-/* links */
-a {
-  color: #4de1a1;
-  text-decoration: none;
-}
-a:hover { text-decoration: underline; }
-
-/* grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+/* SKILLS GRID */
+.skills{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:15px;
 }
 
-/* skills cards */
-.skill-card {
-  background: rgba(255,255,255,0.08);
-  padding: 20px;
-  border-radius: 12px;
+@media(max-width:800px){
+.skills{grid-template-columns:1fr;}
 }
 
-/* globe container */
-#globe {
-  width: 100%;
-  height: 400px;
-  margin-top: 50px;
-}
-
-/* contact */
-.contact {
-  text-align: center;
-  padding: 50px;
+/* IMAGE */
+.profile{
+display:block;
+margin:auto;
+width:180px;
+height:180px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid white;
 }
 </style>
 </head>
@@ -110,16 +87,18 @@ a:hover { text-decoration: underline; }
 
 <!-- HERO -->
 <section class="hero">
-  <div class="name">Suhana Dogra</div>
-  <div class="location">Udhampur, Jammu & Kashmir, India</div>
-  <div class="coords">32.9156° N, 75.1417° E</div>
+<img src="portfolio.jpeg" class="profile">
+
+<div class="name">Suhana Dogra</div>
+<div class="small">Udhampur, Jammu & Kashmir, India</div>
+<div class="small">32.9156° N, 75.1417° E</div>
 </section>
 
 <!-- ABOUT -->
 <section>
 <h2>About Me</h2>
 <div class="card">
-Early-career researcher in geospatial and environmental science specializing in GIS, remote sensing, and spatial analysis. Focused on climate variability, land-use change, and environmental risk assessment in the Himalayan region. Interested in climate resilience and spatial modelling.
+Early-career researcher in geospatial and environmental science specializing in GIS, remote sensing, and spatial analysis. Focused on climate variability, land-use change, and environmental risk assessment in the Himalayan region.
 </div>
 </section>
 
@@ -128,10 +107,8 @@ Early-career researcher in geospatial and environmental science specializing in 
 <h2>Featured Research Project</h2>
 
 <div class="card">
-<h3>Climate and Ecosystem Resilience of Jammu and Kashmir</h3>
-<p>GIS-based spatial modelling using QGIS</p>
-
-<a href="project.html" target="_blank">View Project →</a>
+Climate and Ecosystem Resilience of Jammu and Kashmir<br><br>
+<a href="project.html" target="_blank">View Project</a>
 </div>
 </section>
 
@@ -141,22 +118,32 @@ Early-career researcher in geospatial and environmental science specializing in 
 
 <div class="card">
 <h3>Research Assistant — Dr. Rajan Bharti</h3>
-<p>Department of Geography, Government Degree College, Chenani</p>
-<ul>
-<li>Contributed to spatial & statistical analysis</li>
-<li>Literature review and manuscript preparation</li>
-<li>Worked on Himalayan environmental geography papers</li>
-</ul>
+Department of Geography, Govt. Degree College, Chenani, Udhampur<br><br>
+• Data analysis and manuscript preparation<br>
+• Spatial and statistical climate–landscape analysis<br>
+• Collaboration on Himalayan environmental research
 </div>
 
 <div class="card">
 <h3>Published Paper</h3>
-<a href="paper1.pdf" target="_blank">Rainfall Variability, Soil Susceptibility, and Landslide Vulnerability (2014–2024)</a>
+<a href="https://er.researchfloor.org/rainfall-variability-soil-susceptibility-and-landslide-vulnerability-in-udhampur-district-in-jammu-and-kashmir-india-a-spatiotemporal-assessment-from-2014-to-2024/?view=full"
+target="_blank">
+Rainfall Variability, Soil Susceptibility, and Landslide Vulnerability (View Publication)
+</a>
 </div>
 
 <div class="card">
 <h3>Under Review</h3>
-<a href="courseproject.pdf" target="_blank">Landslide Susceptibility Analysis – Western Himalayas</a>
+<a href="paper1.pdf" target="_blank">
+Landslide Susceptibility Analysis – Western Himalayas
+</a>
+</div>
+
+<div class="card">
+<h3>Course Project</h3>
+<a href="courseproject.pdf" target="_blank">
+Environmental Determinants of Health
+</a>
 </div>
 </section>
 
@@ -165,11 +152,13 @@ Early-career researcher in geospatial and environmental science specializing in 
 <h2>Education</h2>
 
 <div class="card">
-M.A./M.Sc Geography — University of Jammu (2022–2024)
+M.A./M.Sc Geography — University of Jammu (2022–2024)<br>
+Specialisation: GIS, Remote Sensing, Environmental Geography
 </div>
 
 <div class="card">
-B.A Geography — University of Jammu (2019–2022)
+B.A Geography — University of Jammu (2019–2022)<br>
+Foundation in Physical & Human Geography
 </div>
 </section>
 
@@ -178,15 +167,18 @@ B.A Geography — University of Jammu (2019–2022)
 <h2>Experience</h2>
 
 <div class="card">
-GIS Analyst — DronaMaps Pvt. Ltd
+GIS Analyst — DronaMaps Pvt. Ltd<br>
+Processed drone imagery and spatial datasets
 </div>
 
 <div class="card">
-GIS Intern — GIS Vision India
+GIS Intern — GIS Vision India<br>
+Spatial mapping and cartographic outputs
 </div>
 
 <div class="card">
-Online Tutor — Preply (Part-time)
+Online Tutor — Preply (Part-time)<br>
+Teaching geography and environmental science
 </div>
 </section>
 
@@ -194,31 +186,26 @@ Online Tutor — Preply (Part-time)
 <section>
 <h2>Skills</h2>
 
-<div class="grid">
+<div class="skills">
 
-<div class="skill-card">
-🗺️ GIS & Geospatial
-<ul>
-<li>GIS & spatial analysis</li>
-<li>Raster & vector data</li>
-<li>QGIS, ArcGIS, Metashape</li>
-</ul>
+<div class="card">
+🗺️ GIS & Geospatial<br>
+• Spatial analysis<br>
+• Raster/vector data<br>
+• QGIS, ArcGIS, Metashape
 </div>
 
-<div class="skill-card">
-💻 Data & Programming
-<ul>
-<li>Python for geospatial workflows</li>
-<li>Spatial visualization</li>
-</ul>
+<div class="card">
+💻 Data & Programming<br>
+• Python for GIS<br>
+• Spatial visualization
 </div>
 
-<div class="skill-card">
-🌱 Environment
-<ul>
-<li>Climate studies</li>
-<li>Environmental modelling</li>
-</ul>
+<div class="card">
+🌱 Environmental Research<br>
+• Climate studies<br>
+• Environmental systems<br>
+• Scientific writing
 </div>
 
 </div>
@@ -228,63 +215,34 @@ Online Tutor — Preply (Part-time)
 <section>
 <h2>Certificates</h2>
 
-<div class="card">
-<a href="Mindluster_Certificate-1.pdf" target="_blank">Geospatial Analysis & Python (MindLuster)</a>
-</div>
+<div class="card"><a href="Mindluster_Certificate-1.pdf" target="_blank">Geospatial Analysis & Python</a></div>
+<div class="card"><a href="swayan_environment_certificate.pdf" target="_blank">Ecosystem & Natural Resources</a></div>
+<div class="card"><a href="Computer_Diploma.pdf" target="_blank">Diploma in Computer Applications</a></div>
+<div class="card"><a href="alison.jpeg" target="_blank">Climate Change Science</a></div>
+
+</section>
+
+<!-- LANGUAGES -->
+<section>
+<h2>Languages</h2>
 
 <div class="card">
-<a href="swayan_environment_certificate.pdf" target="_blank">Ecosystem & Natural Resources (IGNOU SWAYAM)</a>
-</div>
-
-<div class="card">
-<a href="Computer_Diploma.pdf" target="_blank">Diploma in Computer Applications</a>
-</div>
-
-<div class="card">
-<a href="alison.jpeg" target="_blank">Climate Change Science (Alison)</a>
+English (C1)<br>
+Hindi (Native)<br>
+Dogri (Native)
 </div>
 </section>
 
 <!-- CONTACT -->
-<section class="contact">
-<h2>Get in Touch</h2>
-<p><a href="mailto:dograsuhana25@gmail.com">dograsuhana25@gmail.com</a></p>
-<p><a href="https://www.linkedin.com/in/suhana-dogra-ba5233301/" target="_blank">LinkedIn Profile</a></p>
-</section>
-
-<!-- GLOBE -->
 <section>
-<h2 style="text-align:center;">Interactive Earth</h2>
-<div id="globe"></div>
+<h2>Get in Touch</h2>
+
+<div class="card">
+<a href="mailto:dograsuhana25@gmail.com">Email Me</a><br>
+<a href="https://www.linkedin.com/in/suhana-dogra-ba5233301/" target="_blank">LinkedIn</a>
+</div>
+
 </section>
-
-<!-- THREE.JS GLOBE -->
-<script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
-
-<script>
-let scene = new THREE.Scene();
-let camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-
-let renderer = new THREE.WebGLRenderer({alpha:true});
-renderer.setSize(window.innerWidth, 400);
-document.getElementById("globe").appendChild(renderer.domElement);
-
-// Earth
-let geometry = new THREE.SphereGeometry(2, 32, 32);
-let texture = new THREE.TextureLoader().load("https://threejs.org/examples/textures/land_ocean_ice_cloud_2048.jpg");
-let material = new THREE.MeshBasicMaterial({map: texture});
-let earth = new THREE.Mesh(geometry, material);
-scene.add(earth);
-
-camera.position.z = 5;
-
-function animate(){
-  requestAnimationFrame(animate);
-  earth.rotation.y += 0.002;
-  renderer.render(scene, camera);
-}
-animate();
-</script>
 
 </body>
 </html>
