@@ -3,183 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Climate & Ecosystem Resilience Project</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
-
-/* ================= BASE ================= */
-
-body {
-    margin: 0;
-    font-family: "Inter", sans-serif;
-    background: #081b2e;
-    color: #eaf2f8;
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#0b1a2b;
+    color:white;
 }
 
-/* visible contour background */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image:
-        repeating-linear-gradient(0deg,
-        rgba(255, 220, 170, 0.18) 0px,
-        rgba(255, 220, 170, 0.18) 1px,
-        transparent 1px,
-        transparent 42px),
-
-        repeating-linear-gradient(90deg,
-        rgba(255, 220, 170, 0.12) 0px,
-        rgba(255, 220, 170, 0.12) 1px,
-        transparent 1px,
-        transparent 42px);
-
-    pointer-events: none;
+/* subtle contour background */
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+    opacity:0.15;
+    z-index:-1;
 }
 
-/* ================= LAYOUT ================= */
-
-.container {
-    width: 85%;
-    margin: auto;
-    padding: 40px 0;
+/* layout */
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding:40px 0;
 }
 
-h1 {
-    text-align: center;
-    font-size: 34px;
+/* hero */
+.hero{
+    text-align:center;
+    padding:40px;
 }
 
-.subtitle {
-    text-align: center;
-    color: #bcd6ea;
-    margin-bottom: 30px;
+.hero h1{
+    font-size:32px;
+    margin-bottom:10px;
 }
 
-/* ================= WHITE SECTIONS ================= */
-
-.box {
-    background: rgba(255,255,255,0.96);
-    color: #1a1a1a;
-    padding: 22px;
-    border-radius: 16px;
-    margin: 25px 0;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+.hero p{
+    opacity:0.8;
 }
 
-h2 {
-    font-size: 18px;
-    margin-bottom: 12px;
+/* sections */
+section{
+    background:white;
+    color:#1a1a1a;
+    margin:25px 0;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.3);
 }
 
-/* ================= HERO ================= */
-
-.hero {
-    text-align: center;
-    padding: 20px 0 10px 0;
+/* headings */
+h2{
+    color:#0b3d91;
+    margin-bottom:10px;
 }
 
-/* ================= FLOWCHART CENTERED ================= */
-
-.flow-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    text-align: center;
-    font-family: monospace;
+/* flowchart */
+.flow{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
 }
 
-.flow-box {
-    background: #f4f7fb;
-    padding: 14px;
-    border-radius: 10px;
-    min-width: 220px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+.box{
+    padding:10px 15px;
+    border-radius:8px;
+    background:#e6f0ff;
+    border:2px solid #4a90e2;
+    text-align:center;
+    min-width:180px;
+    font-weight:bold;
 }
 
-.arrow {
-    font-size: 22px;
-    color: #1f8f4a;
+.row{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
 }
 
-/* ================= MAP GRID ================= */
-
-.map-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+/* arrows */
+.arrow{
+    font-size:20px;
+    color:#4a90e2;
 }
 
-.map-center {
-    display: flex;
-    justify-content: center;
-    margin-top: 18px;
+/* map gallery */
+.maps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
 }
 
-.map-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 18px;
+.map-card{
+    background:#f5f7fa;
+    border-radius:10px;
+    overflow:hidden;
+    transition:0.3s;
+    cursor:pointer;
+    border:1px solid #ddd;
 }
 
-.map-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    text-align: center;
-    cursor: pointer;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
+.map-card:hover{
+    transform:scale(1.05);
 }
 
-.map-card img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    transition: transform 0.4s ease;
+.map-card img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
 }
 
-.map-card p {
-    margin: 10px;
-    font-size: 13px;
-    color: #1a1a1a;
+.map-card p{
+    padding:10px;
+    text-align:center;
+    font-weight:bold;
 }
 
-.map-card:hover {
-    transform: translateY(-6px);
+/* links */
+a{
+    color:green;
+    text-decoration:none;
 }
 
-.map-card:hover img {
-    transform: scale(1.08);
+a:hover{
+    text-decoration:underline;
 }
 
-/* ================= SECTIONS COLORS ================= */
-
-.section-title {
-    font-weight: 700;
+/* modal image */
+#modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    justify-content:center;
+    align-items:center;
 }
 
-/* ================= LINKS ================= */
-
-a {
-    color: #1f8f4a;
-    font-weight: 600;
-    text-decoration: none;
+#modal img{
+    max-width:80%;
+    max-height:80%;
+    border-radius:10px;
 }
-
-a:hover {
-    text-decoration: underline;
-}
-
-.back {
-    text-align: center;
-    margin-top: 20px;
-}
-
 </style>
 </head>
 
@@ -187,132 +163,119 @@ a:hover {
 
 <div class="container">
 
-<!-- HERO -->
 <div class="hero">
-<h1>Climate & Ecosystem Resilience of Jammu & Kashmir</h1>
-<p class="subtitle">GIS-Based Spatial Modeling using QGIS</p>
+<h1>Climate and Ecosystem Resilience of Jammu & Kashmir</h1>
+<p>GIS-Based Spatial Modeling using QGIS</p>
 </div>
 
 <!-- OVERVIEW -->
-<div class="box">
+<section>
 <h2>Project Overview</h2>
 <p>
-This project evaluates ecosystem resilience across Jammu and Kashmir using GIS and remote sensing.
-The goal is to generate a unified Resilience Index (RI) using climate, vegetation, and terrain variables.
+This project evaluates ecosystem resilience across Jammu & Kashmir using a GIS-based framework integrating climate, vegetation, and terrain variables. The goal is to generate a Resilience Index (RI) representing spatial ecological stability and vulnerability.
 </p>
-</div>
+</section>
 
-<!-- CONCEPTUAL FRAMEWORK -->
-<div class="box">
-<h2>Conceptual Framework</h2>
-<p>
-Ecosystem resilience is modeled as interaction between climate stress, vegetation condition, and terrain sensitivity.
-</p>
-</div>
-
-<!-- DATA -->
-<div class="box">
-<h2>Data & Variables</h2>
-<p>NDVI • Temperature • Precipitation • DEM (Slope & Aspect) • Land Cover</p>
-</div>
-
-<!-- METHODOLOGY FLOW (CENTERED PARALLEL) -->
-<div class="box">
+<!-- FLOWCHART -->
+<section>
 <h2>Methodology Flowchart</h2>
 
-<div class="flow-container">
+<div class="flow">
 
-<div class="flow-box">
-WorldClim<br>
-Temp + Precip<br>
-→ CSI
-</div>
-
-<div class="flow-box">
-Landsat NDVI<br>
-Forest Cover<br>
-→ ACI
-</div>
-
-<div class="flow-box">
-Slope + Aspect<br>
-Land Cover<br>
-→ ESI
-</div>
-
-</div>
-
-<div style="text-align:center; margin-top:15px;">
+<div class="box">WorldClim</div>
 <div class="arrow">↓</div>
+<div class="box">CSI</div>
+
+<br>
+
+<div class="row">
+<div class="box">Landsat NDVI</div>
+<div class="box">Forest Cover</div>
 </div>
+<div class="arrow">↓</div>
+<div class="box">ACI</div>
 
-<div style="display:flex; justify-content:center;">
-<div class="flow-box">
-ACI + CSI + ESI → RI
+<br>
+
+<div class="row">
+<div class="box">Slope & Aspect</div>
+<div class="box">Land Cover</div>
 </div>
-</div>
+<div class="arrow">↓</div>
+<div class="box">ESI</div>
 
-</div>
+<br>
 
-<!-- OUTPUT MAPS -->
-<div class="box">
-<h2>Final Output Maps</h2>
-
-<p>Spatial distribution of key indices:</p>
-
-<div class="map-row">
-
-<a href="maps/ACI.jpg" target="_blank">
-<div class="map-card">
-<img src="maps/ACI.jpg">
-<p>ACI</p>
-</div>
-</a>
-
-<a href="maps/CSI.jpg" target="_blank">
-<div class="map-card">
-<img src="maps/CSI.jpg">
-<p>CSI</p>
-</div>
-</a>
-
-<a href="maps/ESI.jpg" target="_blank">
-<div class="map-card">
-<img src="maps/ESI.jpg">
-<p>ESI</p>
-</div>
-</a>
+<div class="arrow">ACI + CSI + ESI ↓</div>
+<div class="box">RI</div>
 
 </div>
+</section>
 
-<!-- RI centered -->
-<div class="map-center">
+<!-- DATA -->
+<section>
+<h2>Data Sources</h2>
+<ul>
+<li>WorldClim – Temperature & Precipitation</li>
+<li>Landsat – NDVI</li>
+<li>Copernicus – Forest & Land Cover</li>
+<li>USGS DEM – Slope & Aspect</li>
+</ul>
+</section>
 
-<a href="maps/RI.jpg" target="_blank">
-<div class="map-card" style="width:250px;">
-<img src="maps/RI.jpg">
-<p>RI (Final Output)</p>
+<!-- MAPS -->
+<section>
+<h2>Map Gallery</h2>
+
+<div class="maps">
+
+<div class="map-card" onclick="openImg('ACI.jpg')">
+<img src="ACI.jpg">
+<p>Adaptive Capacity Index (ACI)</p>
 </div>
-</a>
 
+<div class="map-card" onclick="openImg('CSI.jpg')">
+<img src="CSI.jpg">
+<p>Climate Stress Index (CSI)</p>
+</div>
+
+<div class="map-card" onclick="openImg('ESI.jpg')">
+<img src="ESI.jpg">
+<p>Ecosystem Sensitivity Index (ESI)</p>
+</div>
+
+<div class="map-card" onclick="openImg('RI.jpg')">
+<img src="RI.jpg">
+<p>Resilience Index (RI)</p>
 </div>
 
 </div>
+</section>
 
 <!-- SKILLS -->
-<div class="box">
+<section>
 <h2>Skills Demonstrated</h2>
-<p>
-GIS Analysis • Remote Sensing • Raster Processing • MCDA • Spatial Modeling • QGIS
-</p>
-</div>
-
-<!-- BACK -->
-<div class="box back">
-<a href="index.html">← Back to Portfolio</a>
-</div>
+<ul>
+<li>GIS Raster Analysis (QGIS)</li>
+<li>Remote Sensing (NDVI)</li>
+<li>Spatial Modeling & MCDA</li>
+<li>Environmental Index Construction</li>
+</ul>
+</section>
 
 </div>
+
+<!-- IMAGE MODAL -->
+<div id="modal" onclick="this.style.display='none'">
+<img id="modalImg">
+</div>
+
+<script>
+function openImg(src){
+    document.getElementById("modalImg").src = src;
+    document.getElementById("modal").style.display = "flex";
+}
+</script>
 
 </body>
 </html>
