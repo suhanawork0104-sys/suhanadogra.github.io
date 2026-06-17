@@ -11,26 +11,27 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background: #f4f7fb;
-    color: #1c2b36;
+    background: linear-gradient(180deg, #f3f7f4 0%, #eef3f8 50%, #f7f4ef 100%);
+    color: #1f2d2a;
 }
 
-/* NAVBAR */
+/* NAV */
 .navbar {
     position: sticky;
     top: 0;
-    background: white;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
-    gap: 25px;
-    padding: 14px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    gap: 20px;
+    padding: 12px;
+    border-bottom: 1px solid #e6e6e6;
     z-index: 1000;
 }
 
 .navbar a {
     text-decoration: none;
-    color: #1c2b36;
+    color: #2f4f4f;
     font-weight: 500;
 }
 
@@ -41,7 +42,7 @@ body {
 /* HEADER */
 .header {
     text-align: center;
-    padding: 50px 20px 20px;
+    padding: 55px 20px 25px;
 }
 
 .header img {
@@ -50,20 +51,22 @@ body {
     border-radius: 50%;
     border: 4px solid #2b7a78;
     object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .header h1 {
+    margin: 12px 0 5px;
     font-size: 40px;
-    margin-top: 10px;
+    color: #1f3b3a;
 }
 
 .header p {
-    color: #4b5563;
+    color: #4d6a63;
 }
 
 /* CONTAINER */
 .container {
-    max-width: 1000px;
+    max-width: 1050px;
     margin: auto;
     padding: 20px;
 }
@@ -71,36 +74,48 @@ body {
 /* SECTION TITLE */
 .section-title {
     font-size: 18px;
+    margin-top: 35px;
     border-left: 4px solid #2b7a78;
     padding-left: 10px;
-    margin-top: 30px;
+    color: #2a3d3a;
 }
 
 /* CARD */
 .card {
-    background: white;
+    background: rgba(255,255,255,0.85);
     padding: 16px;
     margin-top: 12px;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    transition: 0.25s;
-    text-decoration: none;
-    color: inherit;
-    display: block;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    transition: 0.25s ease;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
 }
 
 /* TAG */
 .tag {
     font-size: 12px;
     padding: 4px 8px;
-    background: #e6f4f3;
+    background: #e8f3ef;
     border-radius: 20px;
     display: inline-block;
     margin-top: 6px;
+    color: #2b7a78;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin: 8px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    background: #2b7a78;
+    color: white;
 }
 </style>
 </head>
@@ -112,6 +127,7 @@ body {
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#publications">Publications</a>
+    <a href="#education">Education</a>
     <a href="#experience">Experience</a>
     <a href="#skills">Skills</a>
     <a href="#certs">Certificates</a>
@@ -120,9 +136,12 @@ body {
 
 <!-- HEADER -->
 <div class="header">
-    <img src="portfolio.jpeg">
+    <img src="portfolio.jpeg" alt="profile">
     <h1>Suhana Dogra</h1>
-    <p>GIS & Remote Sensing Researcher | Climate • Ecosystems • Spatial Modelling</p>
+    <p>GIS & Remote Sensing Researcher | Climate • Ecosystems • Spatial Analysis</p>
+
+    <a class="btn" href="mailto:dograsuhana25@gmail.com">Email</a>
+    <a class="btn" href="https://linkedin.com" target="_blank">LinkedIn</a>
 </div>
 
 <div class="container">
@@ -131,16 +150,16 @@ body {
 <section id="about">
 <div class="section-title">About</div>
 <div class="card">
-Early-career GIS and environmental researcher focusing on climate–ecosystem interactions, spatial modelling, and remote sensing applications in Himalayan environments.
+Early-career researcher in geospatial and environmental science with specialization in GIS, remote sensing, and spatial analysis. Focused on climate–environment interactions, ecosystem dynamics, and Himalayan landscape studies.
 </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- PROJECT -->
 <section id="projects">
-<div class="section-title">Featured Projects</div>
+<div class="section-title">Featured GIS Project</div>
 
 <a class="card" href="project-resilience.html">
-<b>Climate & Ecosystem Resilience of Jammu & Kashmir</b><br>
+<b>Climate and Ecosystem Resilience Assessment of Jammu & Kashmir</b><br>
 <span class="tag">Click to view methodology, maps & outputs</span>
 </a>
 
@@ -152,8 +171,38 @@ Early-career GIS and environmental researcher focusing on climate–ecosystem in
 
 <a class="card" target="_blank"
 href="https://er.researchfloor.org/rainfall-variability-soil-susceptibility-and-landslide-vulnerability-in-udhampur-district-in-jammu-and-kashmir-india-a-spatiotemporal-assessment-from-2014-to-2024/?view=full">
-Rainfall Variability, Soil Susceptibility & Landslide Vulnerability (2014–2024)
+Published: Rainfall Variability, Soil Susceptibility & Landslide Vulnerability in Udhampur District, J&K
 </a>
+
+<div class="card">
+Under Review: Landslide Susceptibility Analysis – Western Himalayas
+</div>
+
+<div class="card">
+Course Project: Environmental Determinants of Health
+</div>
+
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+<div class="section-title">Education</div>
+
+<div class="card">
+<b>M.A./M.Sc. Geography — University of Jammu, India</b><br>
+Dec 2022 – Jul 2024<br><br>
+
+• Specialisation in GIS, remote sensing, and environmental geography<br>
+• Research-focused coursework on climate–environment interactions and spatial analysis<br>
+• Dissertation: rainfall variability and vegetation–climate relationships in the Himalayan region
+</div>
+
+<div class="card">
+<b>B.A. Geography — University of Jammu, India</b><br>
+Sep 2019 – Aug 2022<br><br>
+
+• Foundational studies in physical and human geography
+</div>
 
 </section>
 
@@ -171,9 +220,11 @@ Rainfall Variability, Soil Susceptibility & Landslide Vulnerability (2014–2024
 <section id="skills">
 <div class="section-title">Technical Skills</div>
 
-<div class="card">ArcGIS • QGIS • Remote Sensing</div>
-<div class="card">Python (Geospatial Analysis)</div>
-<div class="card">Spatial Modelling • Raster Analysis</div>
+<div class="card">
+GIS: ArcGIS, QGIS, Spatial Analysis<br>
+Remote Sensing: NDVI, Landsat, Raster Analysis<br>
+Programming: Python (basic geospatial workflows)
+</div>
 
 </section>
 
@@ -181,18 +232,20 @@ Rainfall Variability, Soil Susceptibility & Landslide Vulnerability (2014–2024
 <section id="certs">
 <div class="section-title">Certificates</div>
 
-<a class="card" href="cert1.html">Geospatial Analysis & Python</a>
-<a class="card" href="cert2.html">Environmental Education & Climate Change</a>
+<a class="card" href="cert1.html">Geospatial Analysis and Python – MindLuster</a>
+<a class="card" href="cert2.html">Ecosystem & Natural Resources – IGNOU SWAYAM</a>
+<a class="card" href="cert3.html">Diploma in Computer Applications</a>
+<a class="card" href="cert4.html">Climate Change Science – Alison</a>
 
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-<div class="section-title">Contact</div>
+<div class="section-title">Get in Touch</div>
 
 <div class="card">
-Email: dograsuhana25@gmail.com<br>
-LinkedIn: Available via profile
+📧 Email: <b>dograsuhana25@gmail.com</b><br>
+🔗 LinkedIn: available via header button
 </div>
 
 </section>
