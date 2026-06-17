@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Suhana Dogra | GIS Research Lab</title>
 
@@ -11,26 +11,38 @@
 <style>
 
 /* =========================
-   DARK BLUE + CONTOUR BACKGROUND
+   BASE
 ========================= */
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
-    color: #eef3f8;
-    background: #0b1b2b;
+    background: #0b2236;
+    color: #eaf2f8;
     text-align: center;
-    overflow-x: hidden;
 }
 
-/* beige contour overlay */
+/* =========================
+   CLEAR CONTOUR BACKGROUND
+========================= */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
+
     background-image:
-        radial-gradient(circle at 20% 30%, rgba(245, 230, 200, 0.08) 1px, transparent 1px),
-        radial-gradient(circle at 70% 60%, rgba(245, 230, 200, 0.06) 1px, transparent 1px);
-    background-size: 120px 120px;
+        repeating-linear-gradient(120deg,
+        rgba(240, 220, 180, 0.05) 0px,
+        rgba(240, 220, 180, 0.05) 1px,
+        transparent 1px,
+        transparent 60px),
+
+        repeating-linear-gradient(60deg,
+        rgba(240, 220, 180, 0.04) 0px,
+        rgba(240, 220, 180, 0.04) 1px,
+        transparent 1px,
+        transparent 80px);
+
+    opacity: 0.8;
     pointer-events: none;
 }
 
@@ -47,97 +59,75 @@ body::before {
    HEADER
 ========================= */
 h1 {
-    font-size: 40px;
+    font-size: 42px;
     margin-bottom: 5px;
 }
 
 .subtitle {
-    color: #c7d8e8;
-    margin-bottom: 5px;
+    font-size: 16px;
+    color: #bcd6ea;
 }
 
 .location {
+    margin-top: 6px;
     font-size: 14px;
-    color: #a9bfd6;
+    color: #9fbcd4;
 }
 
 /* =========================
-   BUTTONS
+   SECTION BOX (ONE BIG BOX ONLY)
 ========================= */
-.btn {
-    display: inline-block;
-    margin: 10px 8px;
-    padding: 10px 16px;
-    border-radius: 10px;
-    background: #3aa6ff;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #1e7ed6;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-section {
-    margin-top: 55px;
-}
-
-.section-title {
-    font-size: 20px;
-    margin-bottom: 18px;
-    color: #d6e6f5;
-}
-
-/* =========================
-   CARDS (WHITE PAPER STYLE)
-========================= */
-.card {
+.section-box {
     background: rgba(255,255,255,0.95);
     color: #1b1b1b;
-    border-radius: 14px;
-    padding: 16px;
-    margin: 12px auto;
-    width: 75%;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    transition: 0.3s;
+    border-radius: 16px;
+    padding: 22px;
+    margin: 28px auto;
+    width: 78%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    text-align: left;
 }
 
-.card:hover {
-    transform: translateY(-5px);
+/* SECTION TITLE */
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #0b2236;
 }
 
-/* clickable cards */
-a {
-    text-decoration: none;
+/* spacing inside sections */
+.section-box p, .section-box li {
+    line-height: 1.7;
 }
 
 /* =========================
-   SKILLS CARDS
+   SKILLS GRID (ONLY MULTI BOX)
 ========================= */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-    gap: 14px;
-    width: 80%;
-    margin: auto;
+    gap: 15px;
 }
 
-.skill-card {
-    background: rgba(255,255,255,0.95);
-    color: #1b1b1b;
+.skill {
+    background: white;
+    padding: 14px;
     border-radius: 14px;
-    padding: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.skill-icon {
-    font-size: 26px;
-    margin-bottom: 6px;
+/* =========================
+   LINKS
+========================= */
+a {
+    color: #1e88e5;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 /* =========================
@@ -147,18 +137,6 @@ a {
     width: 240px;
     height: 240px;
     margin-top: 40px;
-}
-
-/* =========================
-   CONTACT
-========================= */
-.contact {
-    background: rgba(255,255,255,0.95);
-    color: #1b1b1b;
-    padding: 18px;
-    width: 60%;
-    margin: auto;
-    border-radius: 14px;
 }
 
 </style>
@@ -174,128 +152,125 @@ a {
 <p class="subtitle">GIS & Remote Sensing Researcher | Climate & Ecosystem Studies</p>
 
 <p class="location">
-Udhampur, Jammu & Kashmir, India <br>
+Udhampur, Jammu & Kashmir, India<br>
 32.9156° N, 75.1417° E
 </p>
 
-<!-- LINKS -->
-<a class="btn" href="mailto:dograsuhana25@gmail.com">Email</a>
-<a class="btn" href="https://www.linkedin.com/in/suhana-dogra-ba5233301/" target="_blank">LinkedIn</a>
-
 <!-- ABOUT -->
-<section>
+<div class="section-box">
 <div class="section-title">About Me</div>
 
-<div class="card">
-I am an early-career researcher in geospatial and environmental science, specializing in GIS, remote sensing, and spatial analysis. My work focuses on climate variability, land-use change, and environmental risk assessment in the Himalayan region. I have experience in academic research, spatial data analysis, and manuscript preparation, with a strong interest in applying geospatial tools for climate resilience, environmental monitoring, and sustainable development. I am currently seeking research assistantship opportunities to further develop my expertise in applied geoscience research.
+<p>
+I am an early-career researcher in geospatial and environmental science, specializing in GIS, remote sensing, and spatial analysis. My work focuses on climate variability, land-use change, and environmental risk assessment in the Himalayan region. I am currently seeking research assistantship opportunities to further develop my expertise in applied geoscience research.
+</p>
 </div>
-</section>
 
-<!-- FEATURED PROJECT -->
-<section>
-<div class="section-title">Featured Research Project</div>
+<!-- EDUCATION -->
+<div class="section-box">
+<div class="section-title">Education</div>
 
-<a href="#">
-<div class="card">
-Climate and Ecosystem Resilience Assessment of Jammu & Kashmir (Click to view full project)
+<p><b>M.A./M.Sc Geography</b> — University of Jammu (2022–2024)</p>
+<p>Specialisation in GIS, remote sensing, environmental geography, spatial analysis</p>
+
+<br>
+
+<p><b>B.A Geography</b> — University of Jammu (2019–2022)</p>
+<p>Physical and human geography foundation</p>
 </div>
-</a>
-</section>
 
-<!-- EXPERIENCE / RESEARCH -->
-<section>
+<!-- EXPERIENCE -->
+<div class="section-box">
+<div class="section-title">Experience</div>
+
+<p><b>GIS Analyst — DronaMaps Pvt. Ltd</b></p>
+<p>Processed drone imagery, created spatial datasets, and supported environmental analysis</p>
+
+<br>
+
+<p><b>GIS Intern — GIS Vision India</b></p>
+<p>Digitisation, spatial risk mapping, and cartographic outputs</p>
+
+<br>
+
+<p><b>Online Tutor — Preply</b></p>
+<p>Teaching geography and environmental science concepts internationally</p>
+</div>
+
+<!-- RESEARCH -->
+<div class="section-box">
 <div class="section-title">Research Experience & Outputs</div>
 
-<div class="card">
-<b>Research Assistant — Dr. Rajan Bharti</b><br>
-Department of Geography, Government Degree College, Chenani, Udhampur (08 2025 – 01 2026)<br><br>
+<p><b>Research Assistant — Dr. Rajan Bharti</b></p>
+<p>Collaborated on Himalayan environmental geography research, data analysis, and manuscripts</p>
 
-• Contributed to data analysis, literature review, and manuscript preparation<br>
-• Supported spatial and statistical analysis for climate–landscape studies<br>
-• Collaborated on two peer-reviewed papers in Himalayan environmental geography
-</div>
+<br>
 
-<a href="https://er.researchfloor.org/rainfall-variability-soil-susceptibility-and-landslide-vulnerability-in-udhampur-district-in-jammu-and-kashmir-india-a-spatiotemporal-assessment-from-2014-to-2024/?view=full" target="_blank">
-<div class="card">
-Published Paper: Rainfall Variability, Soil Susceptibility & Landslide Vulnerability (Click to View)
-</div>
+<p>
+<a href="https://er.researchfloor.org/rainfall-variability-soil-susceptibility-and-landslide-vulnerability-in-udhampur-district-in-jammu-and-kashmir-india-a-spatiotemporal-assessment-from-2014-to-2024/?view=full"
+target="_blank">
+Published Paper: Rainfall Variability & Landslide Vulnerability
 </a>
+</p>
 
-<div class="card">
+<p>
 Under Review: Frequency Ratio–Based GIS Analysis of Landslide Susceptibility in the Western Himalayas
-</div>
+</p>
 
-<div class="card">
+<p>
 Course Project: Environmental Determinants of Health
+</p>
 </div>
-
-</section>
 
 <!-- SKILLS -->
-<section>
+<div class="section-box">
 <div class="section-title">Skills</div>
 
 <div class="skills-grid">
 
-<div class="skill-card">
-<div class="skill-icon">🗺️</div>
-<b>Geospatial & GIS</b>
-<p>GIS analysis, raster/vector data, QGIS, ArcGIS, Agisoft</p>
+<div class="skill">
+🗺️ GIS & Spatial Analysis<br>
+Raster & vector data, QGIS, ArcGIS
 </div>
 
-<div class="skill-card">
-<div class="skill-icon">💻</div>
-<b>Computational</b>
-<p>Python for geospatial workflows, spatial visualization</p>
+<div class="skill">
+💻 Python & GIS Workflows<br>
+Spatial analysis & visualization
 </div>
 
-<div class="skill-card">
-<div class="skill-icon">🌱</div>
-<b>Environmental Research</b>
-<p>Climate studies, environmental modelling, scientific writing</p>
+<div class="skill">
+🌱 Environmental Research<br>
+Climate studies & scientific writing
 </div>
 
 </div>
-</section>
+</div>
 
 <!-- CERTIFICATES -->
-<section>
+<div class="section-box">
 <div class="section-title">Certificates</div>
 
-<a href="#" target="_blank">
-<div class="card">Geospatial Analysis & Python – MindLuster (View Certificate)</div>
-</a>
+<p><a href="#">Geospatial Analysis & Python – MindLuster</a></p>
+<p><a href="#">Ecosystem & Natural Resources – IGNOU SWAYAM</a></p>
+<p><a href="#">Diploma in Computer Applications – RSCIT</a></p>
+<p><a href="#">Climate Change Science – Alison</a></p>
 
-<a href="#" target="_blank">
-<div class="card">Ecosystem & Natural Resources – IGNOU SWAYAM (View Certificate)</div>
-</a>
+</div>
 
-<a href="#" target="_blank">
-<div class="card">Diploma in Computer Applications – RSCIT (View Certificate)</div>
-</a>
-
-<a href="#" target="_blank">
-<div class="card">Climate Change Science – Alison (View Certificate)</div>
-</a>
-
-</section>
-
-<!-- CONTACT -->
-<section>
+<!-- CONTACT (ONLY HERE) -->
+<div class="section-box">
 <div class="section-title">Contact</div>
 
-<div class="contact">
-📧 dograsuhana25@gmail.com <br>
-🔗 <a href="https://www.linkedin.com/in/suhana-dogra-ba5233301/" target="_blank">LinkedIn Profile</a>
+<p>📧 <a href="mailto:dograsuhana25@gmail.com">dograsuhana25@gmail.com</a></p>
+<p>🔗 <a href="https://www.linkedin.com/in/suhana-dogra-ba5233301/" target="_blank">LinkedIn Profile</a></p>
+
 </div>
-</section>
 
 <!-- GLOBE -->
 <canvas id="globe"></canvas>
 
 </div>
 
-<!-- SIMPLE CARTOON EARTH -->
+<!-- GLOBE SCRIPT -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
 <script>
@@ -311,7 +286,6 @@ renderer.setSize(240, 240);
 
 const geometry = new THREE.SphereGeometry(2, 32, 32);
 
-// cartoon-style earth texture
 const texture = new THREE.TextureLoader().load(
 "https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg"
 );
@@ -325,7 +299,7 @@ camera.position.z = 5;
 
 function animate() {
     requestAnimationFrame(animate);
-    globe.rotation.y += 0.003;
+    globe.rotation.y += 0.0025;
     renderer.render(scene, camera);
 }
 
