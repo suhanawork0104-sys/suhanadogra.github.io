@@ -21,12 +21,11 @@ body::before{
     left:0;
     width:100%;
     height:100%;
-    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
-    opacity:0.15;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+    opacity:0.25;
     z-index:-1;
 }
 
-/* layout */
 .container{
     width:90%;
     max-width:1100px;
@@ -34,7 +33,7 @@ body::before{
     padding:40px 0;
 }
 
-/* hero */
+/* HERO */
 .hero{
     text-align:center;
     padding:40px;
@@ -56,50 +55,42 @@ section{
     margin:25px 0;
     padding:25px;
     border-radius:12px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.3);
 }
 
 /* headings */
 h2{
     color:#0b3d91;
-    margin-bottom:10px;
 }
 
-/* flowchart */
+/* FLOW */
 .flow{
     display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:10px;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    text-align:center;
 }
 
-.box{
-    padding:10px 15px;
-    border-radius:8px;
-    background:#e6f0ff;
-    border:2px solid #4a90e2;
-    text-align:center;
-    min-width:180px;
+.block{
+    background:#eaf2ff;
+    padding:12px 15px;
+    border-radius:10px;
+    border:1px solid #4a90e2;
+    min-width:160px;
     font-weight:bold;
 }
 
-.row{
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    flex-wrap:wrap;
-}
-
-/* arrows */
 .arrow{
     font-size:20px;
     color:#4a90e2;
+    text-align:center;
+    width:100%;
 }
 
-/* map gallery */
+/* MAP GRID */
 .maps{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:15px;
 }
 
@@ -107,8 +98,8 @@ h2{
     background:#f5f7fa;
     border-radius:10px;
     overflow:hidden;
-    transition:0.3s;
     cursor:pointer;
+    transition:0.3s;
     border:1px solid #ddd;
 }
 
@@ -118,27 +109,17 @@ h2{
 
 .map-card img{
     width:100%;
-    height:150px;
+    height:160px;
     object-fit:cover;
 }
 
 .map-card p{
     padding:10px;
-    text-align:center;
     font-weight:bold;
+    text-align:center;
 }
 
-/* links */
-a{
-    color:green;
-    text-decoration:none;
-}
-
-a:hover{
-    text-decoration:underline;
-}
-
-/* modal image */
+/* MODAL */
 #modal{
     display:none;
     position:fixed;
@@ -146,15 +127,14 @@ a:hover{
     left:0;
     width:100%;
     height:100%;
-    background:rgba(0,0,0,0.8);
+    background:rgba(0,0,0,0.85);
     justify-content:center;
     align-items:center;
 }
 
 #modal img{
-    max-width:80%;
-    max-height:80%;
-    border-radius:10px;
+    max-width:85%;
+    max-height:85%;
 }
 </style>
 </head>
@@ -163,6 +143,7 @@ a:hover{
 
 <div class="container">
 
+<!-- HERO -->
 <div class="hero">
 <h1>Climate and Ecosystem Resilience of Jammu & Kashmir</h1>
 <p>GIS-Based Spatial Modeling using QGIS</p>
@@ -172,60 +153,74 @@ a:hover{
 <section>
 <h2>Project Overview</h2>
 <p>
-This project evaluates ecosystem resilience across Jammu & Kashmir using a GIS-based framework integrating climate, vegetation, and terrain variables. The goal is to generate a Resilience Index (RI) representing spatial ecological stability and vulnerability.
+This project evaluates ecosystem resilience across Jammu and Kashmir using a GIS-based multi-criteria framework integrating climate, vegetation, and terrain variables. The objective is to derive a single Resilience Index (RI).
 </p>
 </section>
 
-<!-- FLOWCHART -->
+<!-- CONCEPT -->
 <section>
-<h2>Methodology Flowchart</h2>
-
-<div class="flow">
-
-<div class="box">WorldClim</div>
-<div class="arrow">↓</div>
-<div class="box">CSI</div>
-
-<br>
-
-<div class="row">
-<div class="box">Landsat NDVI</div>
-<div class="box">Forest Cover</div>
-</div>
-<div class="arrow">↓</div>
-<div class="box">ACI</div>
-
-<br>
-
-<div class="row">
-<div class="box">Slope & Aspect</div>
-<div class="box">Land Cover</div>
-</div>
-<div class="arrow">↓</div>
-<div class="box">ESI</div>
-
-<br>
-
-<div class="arrow">ACI + CSI + ESI ↓</div>
-<div class="box">RI</div>
-
-</div>
+<h2>Conceptual Framework</h2>
+<p>
+Ecosystem resilience is modeled as a balance between ecological condition, climatic stress, and terrain sensitivity using normalized geospatial variables.
+</p>
 </section>
 
 <!-- DATA -->
 <section>
-<h2>Data Sources</h2>
+<h2>Data & Variables</h2>
 <ul>
-<li>WorldClim – Temperature & Precipitation</li>
-<li>Landsat – NDVI</li>
-<li>Copernicus – Forest & Land Cover</li>
-<li>USGS DEM – Slope & Aspect</li>
+<li>NDVI (Vegetation health)</li>
+<li>Temperature (Climate stress)</li>
+<li>Precipitation (Moisture availability)</li>
+<li>Slope & Aspect (Terrain sensitivity)</li>
+<li>Land Use/Land Cover (Human + ecological structure)</li>
 </ul>
+</section>
+
+<!-- METHODOLOGY FLOW -->
+<section>
+<h2>Methodology Flow</h2>
+
+<div class="flow">
+
+<div class="block">WorldClim<br>Temp + Precip</div>
+<div class="arrow">↓ CSI</div>
+
+<div class="block">Landsat NDVI + Forest Cover</div>
+<div class="arrow">↓ ACI</div>
+
+<div class="block">Slope + Aspect + LULC</div>
+<div class="arrow">↓ ESI</div>
+
+<div class="block">ACI + CSI + ESI</div>
+<div class="arrow">↓</div>
+
+<div class="block">Resilience Index (RI)</div>
+
+</div>
+</section>
+
+<!-- FORMULAS -->
+<section>
+<h2>Index Formulation</h2>
+
+<p><b>Adaptive Capacity Index (ACI)</b><br>
+ACI = (NDVI_norm + Forest) / 2</p>
+
+<p><b>Climate Stress Index (CSI)</b><br>
+CSI = (Temperature_norm + Precipitation_norm) / 2</p>
+
+<p><b>Ecosystem Sensitivity Index (ESI)</b><br>
+ESI = (Slope_norm + Aspect_norm + LULC_norm) / 3</p>
+
+<p><b>Resilience Index (RI)</b><br>
+RI = (ACI + (1 − CSI) + (1 − ESI)) / 3</p>
+
 </section>
 
 <!-- MAPS -->
 <section>
-<h2>Map Gallery</h2>
+<h2>Final Output Maps</h2>
 
 <div class="maps">
 
@@ -252,20 +247,17 @@ This project evaluates ecosystem resilience across Jammu & Kashmir using a GIS-b
 </div>
 </section>
 
-<!-- SKILLS -->
+<!-- INTERPRETATION -->
 <section>
-<h2>Skills Demonstrated</h2>
-<ul>
-<li>GIS Raster Analysis (QGIS)</li>
-<li>Remote Sensing (NDVI)</li>
-<li>Spatial Modeling & MCDA</li>
-<li>Environmental Index Construction</li>
-</ul>
+<h2>Interpretation</h2>
+<p>
+Spatial variation in ecosystem resilience reflects interactions between vegetation health, climatic stress, and terrain complexity across Jammu and Kashmir.
+</p>
 </section>
 
 </div>
 
-<!-- IMAGE MODAL -->
+<!-- MODAL -->
 <div id="modal" onclick="this.style.display='none'">
 <img id="modalImg">
 </div>
