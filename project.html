@@ -4,22 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Featured GIS Project</title>
+<title>Climate & Ecosystem Resilience Project</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================= BASE ================= */
-
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
-    background: #0b2239; /* deep GIS blue */
+    background: #0b2239;
     color: #eaf2f8;
 }
 
-/* contour background (VISIBLE) */
+/* CONTOUR BACKGROUND */
 body::before {
     content: "";
     position: fixed;
@@ -29,28 +27,27 @@ body::before {
         rgba(255, 220, 170, 0.18) 0px,
         rgba(255, 220, 170, 0.18) 1px,
         transparent 1px,
-        transparent 40px),
+        transparent 42px),
 
         repeating-linear-gradient(90deg,
         rgba(255, 220, 170, 0.12) 0px,
         rgba(255, 220, 170, 0.12) 1px,
         transparent 1px,
-        transparent 40px);
+        transparent 42px);
 
     pointer-events: none;
 }
 
-/* ================= LAYOUT ================= */
-
+/* LAYOUT */
 .container {
-    width: 80%;
+    width: 85%;
     margin: auto;
     padding: 40px 0;
 }
 
 h1 {
     text-align: center;
-    font-size: 32px;
+    font-size: 34px;
     margin-bottom: 5px;
 }
 
@@ -60,10 +57,9 @@ h1 {
     margin-bottom: 30px;
 }
 
-/* ================= BOXES ================= */
-
+/* BOX */
 .box {
-    background: rgba(255,255,255,0.95);
+    background: rgba(255,255,255,0.96);
     color: #1a1a1a;
     padding: 22px;
     border-radius: 16px;
@@ -76,18 +72,41 @@ h2 {
     margin-bottom: 12px;
 }
 
-/* ================= FLOWCHART ================= */
+/* ================= FLOWCHART (CENTER + PARALLEL) ================= */
 
-pre {
-    font-family: monospace;
-    background: #f4f7fb;
-    padding: 18px;
-    border-radius: 12px;
-    overflow-x: auto;
-    line-height: 1.5;
+.flow-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
 }
 
-/* ================= MAP GRID ================= */
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.node {
+    background: #f4f7fb;
+    padding: 18px 22px;
+    border-radius: 14px;
+    min-width: 180px;
+    text-align: center;
+    font-family: monospace;
+    font-size: 14px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.arrow {
+    text-align: center;
+    font-size: 22px;
+    margin: 5px 0;
+    color: #333;
+}
+
+/* ================= MAPS ================= */
 
 .map-grid {
     display: grid;
@@ -95,15 +114,14 @@ pre {
     gap: 18px;
 }
 
-/* MAP CARDS */
 .map-card {
     background: white;
     border-radius: 12px;
     overflow: hidden;
     text-align: center;
     cursor: pointer;
+    transition: 0.3s;
     box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
 }
 
 .map-card img {
@@ -119,7 +137,6 @@ pre {
     color: #1a1a1a;
 }
 
-/* hover zoom */
 .map-card:hover {
     transform: translateY(-6px);
 }
@@ -128,16 +145,8 @@ pre {
     transform: scale(1.08);
 }
 
-/* ================= LINKS ================= */
-
 a {
-    color: #1f8f4a;
-    font-weight: 600;
     text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
 }
 
 .back {
@@ -151,118 +160,124 @@ a:hover {
 
 <div class="container">
 
-<h1>Featured Research Project</h1>
-<p class="subtitle">Climate & Ecosystem Resilience Assessment — Jammu & Kashmir</p>
+<h1>Climate & Ecosystem Resilience of Jammu & Kashmir</h1>
+<p class="subtitle">GIS-Based Spatial Modeling using QGIS</p>
 
-<!-- OVERVIEW -->
+<!-- HERO -->
 <div class="box">
 <h2>Project Overview</h2>
 <p>
-This study evaluates ecosystem resilience across Jammu & Kashmir using GIS and remote sensing.
-It integrates climate, vegetation, and terrain variables to derive ACI, CSI, and ESI, which are
-combined into a final Resilience Index (RI).
+This project evaluates ecosystem resilience across Jammu & Kashmir using GIS and remote sensing.
+It integrates climate, vegetation, and terrain variables into a unified Resilience Index (RI).
 </p>
 </div>
 
-<!-- METHODOLOGY -->
+<!-- CONCEPTUAL FLOW -->
 <div class="box">
 <h2>Methodology Flowchart</h2>
 
-<pre>
-┌──────────────┐
-│  WorldClim   │
-│ Temp + Prec. │
-└──────┬───────┘
-       │
-       ▼
-┌──────────────┐
-│     CSI      │
-└──────────────┘
+<div class="flow-wrapper">
 
-
-┌──────────────┐
-│ Landsat NDVI │
-└──────┬───────┘
-       │
-┌──────────────┐
-│ Forest Cover │
-└──────┬───────┘
-       ▼
-┌──────────────┐
-│     ACI      │
-└──────────────┘
-
-
-┌──────────────┐
-│ Slope, Aspect│
-└──────┬───────┘
-       │
-┌──────────────┐
-│ Land Cover   │
-└──────┬───────┘
-       ▼
-┌──────────────┐
-│     ESI      │
-└──────────────┘
-
-
-ACI + CSI + ESI
-       │
-       ▼
-┌──────────────┐
-│      RI      │
-└──────────────┘
-</pre>
-
+<!-- TOP ROW -->
+<div class="row">
+    <div class="node">WorldClim<br>Temp + Prec</div>
 </div>
 
-<!-- DATA -->
-<div class="box">
-<h2>Data Sources</h2>
-<p>WorldClim, Landsat 8, Copernicus Land Cover, USGS DEM</p>
+<div class="arrow">↓</div>
+
+<div class="row">
+    <div class="node">CSI</div>
 </div>
 
-<!-- SKILLS -->
-<div class="box">
-<h2>Skills Demonstrated</h2>
-<p>GIS Analysis • Remote Sensing • Raster Processing • Spatial Modelling • QGIS</p>
+<div class="arrow">↓</div>
+
+<!-- SECOND ROW -->
+<div class="row">
+    <div class="node">Landsat NDVI</div>
+    <div class="node">Forest Cover</div>
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="row">
+    <div class="node">ACI</div>
+</div>
+
+<div class="arrow">↓</div>
+
+<!-- THIRD ROW -->
+<div class="row">
+    <div class="node">Slope + Aspect</div>
+    <div class="node">Land Cover</div>
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="row">
+    <div class="node">ESI</div>
+</div>
+
+<div class="arrow">↓</div>
+
+<div class="row">
+    <div class="node"><b>RI</b></div>
+</div>
+
+</div>
 </div>
 
 <!-- MAPS -->
 <div class="box">
-<h2>Spatial Outputs (Click to View)</h2>
+<h2>Final Output Maps</h2>
 
+<!-- TOP ROW: ACI CSI ESI -->
 <div class="map-grid">
 
 <a href="maps/ACI.jpg" target="_blank">
 <div class="map-card">
 <img src="maps/ACI.jpg">
-<p>Adaptive Capacity Index (ACI)</p>
+<p>ACI</p>
 </div>
 </a>
 
 <a href="maps/CSI.jpg" target="_blank">
 <div class="map-card">
 <img src="maps/CSI.jpg">
-<p>Climate Stress Index (CSI)</p>
+<p>CSI</p>
 </div>
 </a>
 
 <a href="maps/ESI.jpg" target="_blank">
 <div class="map-card">
 <img src="maps/ESI.jpg">
-<p>Ecosystem Sensitivity Index (ESI)</p>
+<p>ESI</p>
 </div>
 </a>
+
+</div>
+
+<br><br>
+
+<!-- CENTER RI -->
+<div class="map-grid" style="grid-template-columns: 1fr; width: 200px; margin:auto;">
 
 <a href="maps/RI.jpg" target="_blank">
 <div class="map-card">
 <img src="maps/RI.jpg">
-<p>Resilience Index (RI)</p>
+<p>RI</p>
 </div>
 </a>
 
 </div>
+
+</div>
+
+<!-- SKILLS -->
+<div class="box">
+<h2>Skills Demonstrated</h2>
+<p>
+GIS Raster Analysis • Remote Sensing • MCDA • QGIS • Spatial Modeling • Environmental Assessment
+</p>
 </div>
 
 <!-- BACK -->
