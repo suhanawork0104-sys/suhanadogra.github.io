@@ -1,143 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Suhana Dogra | GIS Research Lab</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* =======================
-   DARK GIS LAB THEME
-======================= */
+/* =========================
+   BACKGROUND (BLUE + CONTOURS)
+========================= */
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
-    background: #070c0a;
-    color: #e8f1ef;
+    color: #1b1b1b;
+    background: linear-gradient(180deg, #d7ecff, #f5fbff);
+    text-align: center;
+    overflow-x: hidden;
 }
 
-/* =======================
-   NAVBAR
-======================= */
-.navbar {
+/* subtle contour effect */
+body::before {
+    content: "";
     position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    padding: 12px;
-    background: rgba(10,15,13,0.85);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
+    inset: 0;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+    opacity: 0.08;
+    pointer-events: none;
 }
 
-.navbar a {
-    color: #cfe8df;
-    text-decoration: none;
-    font-size: 13px;
+/* =========================
+   LAYOUT
+========================= */
+.container {
+    width: 85%;
+    margin: auto;
+    padding: 40px 0;
 }
 
-.navbar a:hover {
-    color: #7fd1b9;
+/* =========================
+   HEADER
+========================= */
+h1 {
+    font-size: 40px;
+    margin-bottom: 5px;
 }
 
-/* =======================
-   HERO SECTION
-======================= */
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 120px 8% 60px;
+.subtitle {
+    color: #3a5f8a;
+    font-weight: 500;
 }
 
-.hero-text {
-    max-width: 50%;
-}
-
-.hero h1 {
-    font-size: 44px;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    color: #b8d6cc;
-}
-
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
 .btn {
     display: inline-block;
-    margin-top: 15px;
-    margin-right: 10px;
-    padding: 10px 14px;
-    background: #7fd1b9;
-    color: #07110f;
-    font-weight: 600;
+    margin: 10px 8px;
+    padding: 10px 16px;
     border-radius: 10px;
+    background: #2f80ed;
+    color: white;
     text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-/* =======================
-   REAL EARTH CANVAS
-======================= */
-#globe {
-    width: 420px;
-    height: 420px;
+.btn:hover {
+    background: #1b5fc7;
 }
 
-/* =======================
+/* =========================
    SECTIONS
-======================= */
+========================= */
 section {
-    padding: 60px 10%;
+    margin-top: 60px;
 }
 
-.title {
-    font-size: 18px;
-    border-left: 4px solid #7fd1b9;
-    padding-left: 10px;
+.section-title {
+    font-size: 22px;
     margin-bottom: 20px;
+    color: #1d3557;
 }
 
-/* CARDS */
+/* =========================
+   CARDS (WHITE CLEAN STYLE)
+========================= */
 .card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 16px;
-    border-radius: 12px;
-    margin-bottom: 12px;
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    margin: 12px auto;
+    width: 70%;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: 0.3s;
 }
 
-/* =======================
-   SKILLS (ICON STYLE)
-======================= */
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* =========================
+   FEATURED PROJECT CLICKABLE
+========================= */
+.project-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================
+   SKILLS CARD LAYOUT
+========================= */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 15px;
+    width: 80%;
+    margin: auto;
 }
 
-.skill {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
+.skill-card {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-.skill span {
-    font-size: 20px;
+.skill-icon {
+    font-size: 26px;
+    margin-bottom: 8px;
 }
 
-/* LINKS */
+.skill-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1d3557;
+}
+
+.skill-card ul {
+    padding-left: 18px;
+    text-align: left;
+}
+
+/* =========================
+   GLOBE (BOTTOM PLACED)
+========================= */
+#globe-container {
+    margin-top: 80px;
+    padding-bottom: 50px;
+}
+
+/* canvas size */
+#globe {
+    width: 260px;
+    height: 260px;
+    margin: auto;
+}
+
+/* =========================
+   CONTACT
+========================= */
+.contact {
+    background: white;
+    padding: 20px;
+    width: 60%;
+    margin: auto;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
 a {
-    color: #7fd1b9;
+    color: #2f80ed;
 }
 
 </style>
@@ -145,158 +181,187 @@ a {
 
 <body>
 
-<!-- NAV -->
-<div class="navbar">
-<a href="#about">About</a>
-<a href="#projects">Projects</a>
-<a href="#publications">Publications</a>
-<a href="#education">Education</a>
-<a href="#skills">Skills</a>
-<a href="#certs">Certificates</a>
-<a href="#contact">Contact</a>
-</div>
+<div class="container">
 
-<!-- HERO -->
-<div class="hero">
-
-<div class="hero-text">
+<!-- HEADER -->
 <h1>Suhana Dogra</h1>
-<p>GIS & Remote Sensing Researcher | Climate • Ecosystem • Spatial Analysis</p>
+<p class="subtitle">GIS & Remote Sensing Researcher | Climate & Ecosystem Studies</p>
 
 <a class="btn" href="mailto:dograsuhana25@gmail.com">Email</a>
-<a class="btn" href="https://linkedin.com" target="_blank">LinkedIn</a>
-</div>
-
-<!-- REAL EARTH GLOBE -->
-<canvas id="globe"></canvas>
-
-</div>
+<a class="btn" href="https://www.linkedin.com" target="_blank">LinkedIn</a>
 
 <!-- ABOUT -->
-<section id="about">
-<div class="title">About</div>
+<section>
+<div class="section-title">About Me</div>
+
 <div class="card">
-GIS researcher specializing in climate variability, ecosystem resilience, spatial modelling, and Himalayan environmental systems.
+Early-career researcher in GIS, Remote Sensing, and environmental geography with strong focus on Himalayan ecosystem systems, climate variability, and spatial modelling.
+</div>
+
+<div class="card">
+Skilled in geospatial analysis, raster-based modelling, and environmental data interpretation using GIS tools and Python-based workflows.
 </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-<div class="title">Featured GIS Project</div>
+<!-- FEATURED PROJECT -->
+<section>
+<div class="section-title">Featured Research Project</div>
+
+<a class="project-link" href="project.html">
 
 <div class="card">
-Climate and Ecosystem Resilience Assessment of Jammu & Kashmir
+<b>Climate and Ecosystem Resilience Assessment of Jammu & Kashmir</b>
+<p>Click to view methodology, maps, datasets, and outputs (ACI, CSI, ESI, RI)</p>
 </div>
 
+</a>
+</section>
+
+<!-- EXPERIENCE -->
+<section>
+<div class="section-title">Experience</div>
+
+<div class="card">GIS Analyst — DronaMaps Pvt. Ltd</div>
+<div class="card">GIS Intern — GIS Vision India</div>
+<div class="card">Online Tutor — Preply (Geography & Environmental Science)</div>
 </section>
 
 <!-- PUBLICATIONS -->
-<section id="publications">
-<div class="title">Research & Publications</div>
+<section>
+<div class="section-title">Research & Publications</div>
 
+<a class="project-link" href="https://er.researchfloor.org/rainfall-variability-soil-susceptibility-and-landslide-vulnerability-in-udhampur-district-in-jammu-and-kashmir-india-a-spatiotemporal-assessment-from-2014-to-2024/?view=full" target="_blank">
 <div class="card">
-<a href="https://er.researchfloor.org/rainfall-variability-soil-susceptibility-and-landslide-vulnerability-in-udhampur-district-in-jammu-and-kashmir-india-a-spatiotemporal-assessment-from-2014-to-2024/?view=full" target="_blank">
-Published Paper: Rainfall Variability & Landslide Vulnerability
+Published Paper: Rainfall Variability & Landslide Vulnerability (Click to View)
+</div>
 </a>
-</div>
 
-<div class="card">
-Under Review: Landslide Susceptibility Analysis – Western Himalayas
-</div>
-
+<div class="card">Under Review: Landslide Susceptibility Analysis – Western Himalayas</div>
+<div class="card">Course Project: Environmental Determinants of Health</div>
 </section>
 
 <!-- EDUCATION -->
-<section id="education">
-<div class="title">Education</div>
+<section>
+<div class="section-title">Education</div>
 
 <div class="card">
-M.Sc Geography — University of Jammu (2022–2024)
+M.A./M.Sc. Geography — University of Jammu (2022–2024)
 </div>
 
 <div class="card">
-B.A Geography — University of Jammu (2019–2022)
+B.A. Geography — University of Jammu (2019–2022)
 </div>
-
 </section>
 
 <!-- SKILLS -->
-<section id="skills">
-<div class="title">Skills</div>
+<section>
+<div class="section-title">Skills</div>
 
 <div class="skills-grid">
 
-<div class="skill"><span>🗺️</span> GIS & Spatial Analysis</div>
-<div class="skill"><span>🛰️</span> Remote Sensing</div>
-<div class="skill"><span>📊</span> Raster & Vector Data</div>
-<div class="skill"><span>💻</span> Python (GIS workflows)</div>
-<div class="skill"><span>🌍</span> QGIS / ArcGIS</div>
-<div class="skill"><span>📡</span> Agisoft Metashape</div>
-<div class="skill"><span>🌱</span> Environmental Science</div>
-<div class="skill"><span>✍️</span> Academic Research Writing</div>
+<div class="skill-card">
+<div class="skill-icon">🗺️</div>
+<div class="skill-title">Geospatial & GIS</div>
+<ul>
+<li>GIS & spatial analysis</li>
+<li>Raster & vector data</li>
+<li>Cartography</li>
+<li>QGIS, ArcGIS, Agisoft</li>
+</ul>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon">💻</div>
+<div class="skill-title">Computational</div>
+<ul>
+<li>Python for GIS</li>
+<li>Spatial visualization</li>
+</ul>
+</div>
+
+<div class="skill-card">
+<div class="skill-icon">🌱</div>
+<div class="skill-title">Environmental</div>
+<ul>
+<li>Climate studies</li>
+<li>Environmental analysis</li>
+<li>Scientific research writing</li>
+</ul>
+</div>
 
 </div>
 </section>
 
 <!-- CERTIFICATES -->
-<section id="certs">
-<div class="title">Certificates</div>
+<section>
+<div class="section-title">Certificates</div>
 
-<div class="card">
-Geospatial Analysis & Python – MindLuster
-</div>
+<a class="project-link" href="#">
+<div class="card">Geospatial Analysis & Python – MindLuster (View Certificate)</div>
+</a>
 
-<div class="card">
-Ecosystem & Natural Resources – IGNOU SWAYAM
-</div>
+<a class="project-link" href="#">
+<div class="card">Ecosystem & Natural Resources – IGNOU SWAYAM (View Certificate)</div>
+</a>
 
-<div class="card">
-Diploma in Computer Applications – RSCIT
-</div>
+<a class="project-link" href="#">
+<div class="card">Diploma in Computer Applications – RSCIT (View Certificate)</div>
+</a>
 
-<div class="card">
-Climate Change Science – Alison
-</div>
+<a class="project-link" href="#">
+<div class="card">Climate Change Science – Alison (View Certificate)</div>
+</a>
 
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
-<div class="title">Contact</div>
+<section>
+<div class="section-title">Contact</div>
 
-<div class="card">
+<div class="contact">
 📧 dograsuhana25@gmail.com <br>
 🔗 LinkedIn Profile
 </div>
-
 </section>
 
-<!-- THREE.JS EARTH -->
+<!-- GLOBE AT BOTTOM -->
+<div id="globe-container">
+<canvas id="globe"></canvas>
+</div>
+
+</div>
+
+<!-- SIMPLE GLOBE -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
 <script>
-let scene = new THREE.Scene();
-let camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
 
-let renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("globe"), alpha: true });
-renderer.setSize(420, 420);
+const renderer = new THREE.WebGLRenderer({
+    canvas: document.getElementById("globe"),
+    alpha: true
+});
 
-let geometry = new THREE.SphereGeometry(2, 64, 64);
+renderer.setSize(260, 260);
 
-let texture = new THREE.TextureLoader().load(
-"https://threejs.org/examples/textures/land_ocean_ice_cloud_2048.jpg"
+const geometry = new THREE.SphereGeometry(2, 40, 40);
+
+// softer stylized earth (NOT ultra-real)
+const texture = new THREE.TextureLoader().load(
+"https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg"
 );
 
-let material = new THREE.MeshBasicMaterial({ map: texture });
-let globe = new THREE.Mesh(geometry, material);
+const material = new THREE.MeshBasicMaterial({ map: texture });
 
+const globe = new THREE.Mesh(geometry, material);
 scene.add(globe);
 
 camera.position.z = 5;
 
 function animate() {
     requestAnimationFrame(animate);
-    globe.rotation.y += 0.0025;
+    globe.rotation.y += 0.002;
     renderer.render(scene, camera);
 }
 
