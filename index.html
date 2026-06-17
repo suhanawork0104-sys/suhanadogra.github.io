@@ -9,78 +9,62 @@
 
 <style>
 
-/* =========================
-   BASE
-========================= */
+/* =======================
+   DARK GIS LAB BACKGROUND
+======================= */
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
-    color: #1f2d2a;
+    color: #e8f1ef;
 
     background:
-        radial-gradient(circle at 20% 20%, #e6f2ec 0%, transparent 25%),
-        radial-gradient(circle at 80% 30%, #e7eef5 0%, transparent 30%),
-        radial-gradient(circle at 50% 80%, #f3efe6 0%, transparent 35%),
+        radial-gradient(circle at 20% 20%, rgba(46,139,87,0.15), transparent 35%),
+        radial-gradient(circle at 80% 30%, rgba(70,130,180,0.15), transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(210,180,140,0.10), transparent 45%),
+
         repeating-linear-gradient(
             45deg,
-            rgba(43,122,120,0.03),
-            rgba(43,122,120,0.03) 1px,
+            rgba(255,255,255,0.04),
+            rgba(255,255,255,0.04) 1px,
             transparent 1px,
-            transparent 20px
+            transparent 18px
         ),
-        #f7faf8;
+
+        #0b1210;
 }
 
-/* =========================
-   ANIMATIONS
-========================= */
-.fade-in {
-    animation: fadeInUp 0.9s ease forwards;
-    opacity: 0;
-    transform: translateY(12px);
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* =========================
+/* =======================
    NAVBAR
-========================= */
+======================= */
 .navbar {
     position: sticky;
     top: 0;
-    background: #ffffff;
-    border-bottom: 1px solid #e6e6e6;
+    background: rgba(10,15,13,0.85);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 18px;
     padding: 12px;
-    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .navbar a {
+    color: #cfe8df;
     text-decoration: none;
     font-size: 13px;
-    color: #2f4f4f;
-    font-weight: 500;
 }
 
 .navbar a:hover {
-    color: #2b7a78;
+    color: #7fd1b9;
 }
 
-/* =========================
+/* =======================
    HEADER
-========================= */
+======================= */
 .header {
     text-align: center;
-    padding: 50px 20px 20px;
+    padding: 60px 20px 20px;
     position: relative;
-    overflow: hidden;
 }
 
 /* PROFILE IMAGE */
@@ -88,80 +72,105 @@ body {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 4px solid #2b7a78;
+    border: 3px solid #7fd1b9;
     object-fit: cover;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
+/* TITLE */
 .header h1 {
-    margin-top: 15px;
     font-size: 40px;
-    color: #1f3b3a;
+    margin-top: 15px;
+    color: #ffffff;
 }
 
 .header p {
-    color: #4f6b64;
+    color: #b8d6cc;
 }
 
-/* =========================
-   ROTATING GLOBE
-========================= */
+/* =======================
+   REALISTIC GIS GLOBE
+======================= */
 .globe {
     position: absolute;
-    top: 20px;
+    top: 30px;
     right: 40px;
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
+
     background:
-        radial-gradient(circle at 30% 30%, #bde0fe, #1b4965);
-    box-shadow: inset -10px -10px 25px rgba(0,0,0,0.3);
-    animation: rotateGlobe 10s linear infinite;
-    opacity: 0.85;
+        radial-gradient(circle at 30% 30%, #b6f0ff, #1b3b4f 60%, #0a1a22);
+
+    box-shadow:
+        inset -20px -20px 40px rgba(0,0,0,0.6),
+        0 0 25px rgba(127,209,185,0.25);
+
+    animation: spin 12s linear infinite;
 }
 
-@keyframes rotateGlobe {
+/* spinning */
+@keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
-/* SATELLITES */
+/* =======================
+   SATELLITES (ORBIT STYLE)
+======================= */
 .satellite {
     position: absolute;
-    width: 8px;
-    height: 8px;
-    background: #2b7a78;
+    width: 6px;
+    height: 6px;
+    background: #7fd1b9;
     border-radius: 50%;
-    animation: orbit 6s linear infinite;
+    box-shadow: 0 0 10px rgba(127,209,185,0.8);
 }
 
-@keyframes orbit {
+.s1 {
+    top: 60px;
+    left: 70px;
+    animation: orbit1 6s linear infinite;
+}
+
+.s2 {
+    top: 120px;
+    left: 200px;
+    animation: orbit2 8s linear infinite;
+}
+
+@keyframes orbit1 {
     0% { transform: translate(0,0); }
-    50% { transform: translate(80px,-40px); }
+    50% { transform: translate(90px,-40px); }
     100% { transform: translate(0,0); }
 }
 
-/* BUTTONS */
+@keyframes orbit2 {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(-80px,50px); }
+    100% { transform: translate(0,0); }
+}
+
+/* =======================
+   BUTTONS
+======================= */
 .btn {
     display: inline-block;
     margin: 10px 6px;
     padding: 10px 14px;
-    background: #2b7a78;
-    color: white;
+    background: #7fd1b9;
+    color: #0b1210;
     border-radius: 10px;
     text-decoration: none;
-    font-size: 14px;
-    transition: 0.2s;
+    font-weight: 600;
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-    background: #236864;
+    background: #5fb39d;
 }
 
-/* =========================
-   LAYOUT
-========================= */
+/* =======================
+   CONTAINER
+======================= */
 .container {
     max-width: 1050px;
     margin: auto;
@@ -172,36 +181,41 @@ body {
 .section-title {
     margin-top: 40px;
     font-weight: 600;
-    border-left: 4px solid #2b7a78;
+    border-left: 4px solid #7fd1b9;
     padding-left: 10px;
-    color: #223632;
+    color: #ffffff;
 }
 
-/* CARDS */
+/* CARD */
 .card {
-    background: #ffffff;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
     margin-top: 12px;
     padding: 16px;
     border-radius: 12px;
-    border: 1px solid #e8eceb;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-    transition: 0.25s ease;
-    text-decoration: none;
-    color: inherit;
-    display: block;
+    transition: 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(43,122,120,0.12);
+    background: rgba(255,255,255,0.07);
 }
 
+/* TAG */
 .tag {
     font-size: 12px;
-    background: #e8f3ef;
     padding: 4px 8px;
+    background: rgba(127,209,185,0.15);
     border-radius: 20px;
-    color: #2b7a78;
+    color: #7fd1b9;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 </style>
@@ -215,20 +229,21 @@ body {
 <a href="#publications">Publications</a>
 <a href="#education">Education</a>
 <a href="#skills">Skills</a>
+<a href="#certs">Certifications</a>
 <a href="#contact">Contact</a>
 </div>
 
 <!-- HEADER -->
-<div class="header fade-in">
+<div class="header">
 
 <div class="globe"></div>
-<div class="satellite" style="top:60px; left:60px;"></div>
-<div class="satellite" style="top:120px; left:200px;"></div>
+<div class="satellite s1"></div>
+<div class="satellite s2"></div>
 
 <img src="portfolio.jpeg" alt="Profile">
 
 <h1>Suhana Dogra</h1>
-<p>GIS & Remote Sensing Researcher | Climate & Ecosystem Studies</p>
+<p>GIS & Remote Sensing Researcher | Climate • Ecosystems • Spatial Modelling</p>
 
 <a class="btn" href="mailto:dograsuhana25@gmail.com">Email</a>
 <a class="btn" href="https://linkedin.com" target="_blank">LinkedIn</a>
@@ -238,54 +253,53 @@ body {
 <div class="container">
 
 <!-- ABOUT -->
-<section id="about" class="fade-in">
+<section id="about">
 <div class="section-title">About</div>
 <div class="card">
-GIS and environmental science researcher focused on climate–ecosystem interactions, spatial modelling, and Himalayan landscape systems.
+GIS and environmental science researcher focused on climate variability, ecosystem resilience, and spatial analysis of Himalayan landscapes.
 </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="fade-in">
+<!-- PROJECT -->
+<section id="projects">
 <div class="section-title">Featured GIS Project</div>
-
-<a class="card" href="project.html">
-<b>Climate and Ecosystem Resilience of Jammu & Kashmir</b><br><br>
-<span class="tag">Click to view maps, methodology & results</span>
-</a>
+<div class="card">
+Climate and Ecosystem Resilience Assessment of Jammu & Kashmir
+<span class="tag">Click for full methodology & maps</span>
+</div>
 </section>
 
 <!-- PUBLICATIONS -->
-<section id="publications" class="fade-in">
+<section id="publications">
 <div class="section-title">Research & Publications</div>
 
-<a class="card" target="_blank" href="https://er.researchfloor.org/rainfall-variability-soil-susceptibility-and-landslide-vulnerability-in-udhampur-district-in-jammu-and-kashmir-india-a-spatiotemporal-assessment-from-2014-to-2024/?view=full">
+<div class="card">
 Published Paper: Rainfall Variability & Landslide Vulnerability
-</a>
+</div>
 
 <div class="card">
-Under Review: Landslide Susceptibility Analysis – Western Himalayas
+Under Review: Landslide Susceptibility Analysis
 </div>
 
 </section>
 
 <!-- EDUCATION -->
-<section id="education" class="fade-in">
+<section id="education">
 <div class="section-title">Education</div>
 
 <div class="card">
-M.A./M.Sc. Geography — University of Jammu (2022–2024)
+M.Sc Geography — University of Jammu (2022–2024)
 </div>
 
 <div class="card">
-B.A. Geography — University of Jammu (2019–2022)
+B.A Geography — University of Jammu (2019–2022)
 </div>
 
 </section>
 
 <!-- SKILLS -->
-<section id="skills" class="fade-in">
-<div class="section-title">Technical Skills</div>
+<section id="skills">
+<div class="section-title">Skills</div>
 
 <div class="card">
 GIS | Remote Sensing | QGIS | ArcGIS | Python | Spatial Analysis | Cartography
@@ -293,31 +307,24 @@ GIS | Remote Sensing | QGIS | ArcGIS | Python | Spatial Analysis | Cartography
 
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="fade-in">
-<div class="section-title">Contact</div>
+<!-- CERTIFICATIONS -->
+<section id="certs">
+<div class="section-title">Certifications</div>
 
-<div class="card">
-📧 dograsuhana25@gmail.com
-</div>
+<div class="card">Geospatial Analysis & Python – MindLuster</div>
+<div class="card">Ecosystem & Natural Resources – IGNOU SWAYAM</div>
+<div class="card">Computer Applications Diploma – RSCIT</div>
+<div class="card">Climate Change Science – Alison</div>
 
 </section>
 
+<!-- CONTACT -->
+<section id="contact" class="contact">
+📧 dograsuhana25@gmail.com<br>
+🔗 LinkedIn Profile
+</section>
+
 </div>
-
-<script>
-const elements = document.querySelectorAll('.fade-in');
-
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-        }
-    });
-});
-
-elements.forEach(el => observer.observe(el));
-</script>
 
 </body>
 </html>
