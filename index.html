@@ -16,10 +16,9 @@ body {
     background: #0a1f33;
     color: #eaf2f8;
     text-align: center;
-    overflow-x: hidden;
 }
 
-/* CONTEXTUAL CONTOUR BACKGROUND (VISIBLE) */
+/* CONTEXT CONTOURS */
 body::before {
     content: "";
     position: fixed;
@@ -36,12 +35,8 @@ body::before {
         rgba(255, 220, 170, 0.09) 0px,
         rgba(255, 220, 170, 0.09) 1px,
         transparent 1px,
-        transparent 45px),
+        transparent 45px);
 
-        radial-gradient(circle at 25% 30%, rgba(80,150,200,0.18), transparent 45%),
-        radial-gradient(circle at 70% 70%, rgba(100,180,140,0.12), transparent 45%);
-
-    opacity: 1;
     pointer-events: none;
 }
 
@@ -56,7 +51,6 @@ body::before {
 .name {
     font-size: 46px;
     font-weight: 700;
-    margin-bottom: 6px;
 }
 
 .address {
@@ -67,7 +61,6 @@ body::before {
 .coords {
     font-size: 12px;
     color: #8fb3cc;
-    margin-top: 4px;
 }
 
 /* SECTION BOX */
@@ -76,25 +69,19 @@ body::before {
     color: #1b1b1b;
     border-radius: 16px;
     padding: 22px;
-    margin: 30px auto;
+    margin: 28px auto;
     width: 78%;
     text-align: left;
     box-shadow: 0 12px 35px rgba(0,0,0,0.25);
-    transition: 0.3s ease;
 }
 
-.section:hover {
-    transform: translateY(-4px);
-}
-
-/* HEADINGS */
 .section h2 {
     margin-top: 0;
-    font-size: 18px;
     color: #0a1f33;
+    font-size: 18px;
 }
 
-/* LINKS (GREEN + NEW TAB) */
+/* GREEN LINKS ONLY */
 a {
     color: #1f8f4a;
     font-weight: 600;
@@ -113,21 +100,17 @@ a:hover {
 }
 
 .skill-card {
-    background: #ffffff;
+    background: #fff;
     padding: 14px;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
-.skill-card:hover {
-    transform: scale(1.03);
-}
-
-/* RESEARCH BLOCK */
+/* RESEARCH */
 .research-card {
-    padding: 12px;
     border-left: 4px solid #1f8f4a;
-    margin-bottom: 12px;
+    padding-left: 12px;
+    margin-bottom: 15px;
 }
 
 </style>
@@ -139,27 +122,57 @@ a:hover {
 
 <!-- HEADER -->
 <div class="name">Suhana Dogra</div>
-
 <div class="address">Udhampur, Jammu & Kashmir, India</div>
-
 <div class="coords">32.9156° N, 75.1417° E</div>
 
 <!-- ABOUT -->
 <div class="section">
 <h2>About Me</h2>
 <p>
-Early-career researcher in geospatial and environmental science specializing in GIS, remote sensing, spatial analysis, climate variability, land-use change, and environmental risk assessment in the Himalayan region.
+I am an early-career researcher in geospatial and environmental science, specializing in GIS, remote sensing, and spatial analysis. My work focuses on climate variability, land-use change, and environmental risk assessment in the Himalayan region. I have experience in academic research, spatial data analysis, and scientific writing, with interests in climate–environment interactions and sustainable development.
 </p>
 </div>
 
-<!-- FEATURED PROJECT -->
+<!-- FEATURED PROJECT (FIXED CLICKABLE STRUCTURE) -->
 <div class="section">
 <h2>Featured Research Project</h2>
 
 <p><b>Climate and Ecosystem Resilience Assessment of Jammu & Kashmir Using GIS and Remote Sensing</b></p>
 
 <p>
-A GIS-based multi-criteria environmental assessment project integrating climate, vegetation, and terrain variables to evaluate ecosystem resilience and vulnerability patterns.
+<a href="#" target="_blank">View Project →</a>
+</p>
+</div>
+
+<!-- RESEARCH (MOVED ABOVE EDUCATION) -->
+<div class="section">
+<h2>Research Experience & Outputs</h2>
+
+<div class="research-card">
+<b>Research Assistant — Dr. Rajan Bharti</b><br>
+Department of Geography, Government Degree College, Chenani, Udhampur<br><br>
+
+• Data analysis, literature review, manuscript preparation<br>
+• Spatial and statistical analysis for climate–landscape studies<br>
+• Collaboration on two peer-reviewed papers
+</div>
+
+<p>
+<b>Published Paper:</b><br>
+<a href="https://er.researchfloor.org/rainfall-variability-soil-susceptibility-and-landslide-vulnerability-in-udhampur-district-in-jammu-and-kashmir-india-a-spatiotemporal-assessment-from-2014-to-2024/?view=full"
+target="_blank">
+Rainfall Variability, Soil Susceptibility, and Landslide Vulnerability in Udhampur
+</a>
+</p>
+
+<p>
+<b>Under Review:</b><br>
+<a href="#" target="_blank">Landslide Susceptibility Analysis – Western Himalayas</a>
+</p>
+
+<p>
+<b>Course Project:</b><br>
+<a href="#" target="_blank">Environmental Determinants of Health</a>
 </p>
 </div>
 
@@ -191,44 +204,7 @@ A GIS-based multi-criteria environmental assessment project integrating climate,
 <br>
 
 <p><b>Online Tutor (Part-time) — Preply</b></p>
-<p>Teaching geography and environmental science concepts to international students</p>
-</div>
-
-<!-- RESEARCH -->
-<div class="section">
-<h2>Research Experience & Outputs</h2>
-
-<div class="research-card">
-<b>Research Assistant — Dr. Rajan Bharti</b><br>
-Department of Geography, Government Degree College, Chenani, Udhampur
-<br><br>
-• Data analysis, literature review, manuscript preparation<br>
-• Spatial and statistical analysis for climate–landscape studies<br>
-• Collaboration on two peer-reviewed papers
-</div>
-
-<p>
-<b>Published Paper:</b><br>
-<a href="https://er.researchfloor.org/rainfall-variability-soil-susceptibility-and-landslide-vulnerability-in-udhampur-district-in-jammu-and-kashmir-india-a-spatiotemporal-assessment-from-2014-to-2024/?view=full"
-target="_blank">
-Rainfall Variability, Soil Susceptibility, and Landslide Vulnerability in Udhampur
-</a>
-</p>
-
-<p>
-<b>Under Review:</b><br>
-<a href="#" target="_blank">
-Landslide Susceptibility Analysis – Western Himalayas
-</a>
-</p>
-
-<p>
-<b>Course Project:</b><br>
-<a href="#" target="_blank">
-Environmental Determinants of Health
-</a>
-</p>
-
+<p>Teaching geography and environmental science concepts internationally</p>
 </div>
 
 <!-- SKILLS -->
@@ -239,30 +215,39 @@ Environmental Determinants of Health
 
 <div class="skill-card">
 🗺️ GIS & Spatial Analysis<br>
-QGIS, ArcGIS, Raster & Vector Data
+QGIS, ArcGIS, raster/vector data
 </div>
 
 <div class="skill-card">
 💻 Python & Geospatial Workflows<br>
-Spatial analysis and visualization
+Spatial analysis & visualization
 </div>
 
 <div class="skill-card">
 🌱 Environmental Research<br>
-Climate studies and scientific writing
+Climate variability & ecosystem studies
 </div>
 
 </div>
 </div>
 
-<!-- CERT NOTE (optional placeholder kept clean) -->
+<!-- CERTIFICATES -->
 <div class="section">
 <h2>Certificates</h2>
 
-<p>Geospatial Analysis & Python – MindLuster → <a href="#" target="_blank">View Certificate</a></p>
-<p>Ecosystem & Natural Resources – IGNOU SWAYAM → <a href="#" target="_blank">View Certificate</a></p>
-<p>Diploma in Computer Applications – RSCIT → <a href="#" target="_blank">View Certificate</a></p>
-<p>Climate Change Science – Alison → <a href="#" target="_blank">View Certificate</a></p>
+<p>Geospatial Analysis & Python → <a href="#" target="_blank">View Certificate</a></p>
+<p>Ecosystem & Natural Resources → <a href="#" target="_blank">View Certificate</a></p>
+<p>Diploma in Computer Applications → <a href="#" target="_blank">View Certificate</a></p>
+<p>Climate Change Science → <a href="#" target="_blank">View Certificate</a></p>
+
+</div>
+
+<!-- CONTACT -->
+<div class="section">
+<h2>Contact</h2>
+
+<p>📧 <a href="mailto:dograsuhana25@gmail.com">Email Me</a></p>
+<p>🔗 <a href="https://www.linkedin.com/in/suhana-dogra-ba5233301/" target="_blank">LinkedIn</a></p>
 
 </div>
 
