@@ -6,107 +6,178 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+
+/* =======================
+   GLOBAL BACKGROUND
+======================= */
 body{
 margin:0;
-font-family:Arial;
-background:#0b1f33;
+font-family:Arial, sans-serif;
+background: radial-gradient(circle at top, #0e2a3f, #07131f);
 color:white;
+overflow-x:hidden;
 }
 
+/* soft animated glow background */
+body::before{
+content:"";
+position:fixed;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background: radial-gradient(circle, rgba(57,217,138,0.08), transparent 60%);
+animation: floatGlow 14s ease-in-out infinite;
+z-index:-1;
+}
+
+@keyframes floatGlow{
+0%{transform:translate(0,0);}
+50%{transform:translate(40px,20px);}
+100%{transform:translate(0,0);}
+}
+
+/* =======================
+   SECTIONS
+======================= */
 section{
 max-width:1000px;
 margin:auto;
-padding:50px 20px;
+padding:70px 25px;
 }
 
+/* section titles */
 h2{
-border-bottom:1px solid rgba(255,255,255,0.2);
+border-bottom:1px solid rgba(255,255,255,0.15);
 padding-bottom:10px;
+margin-bottom:25px;
+letter-spacing:0.5px;
 }
 
+/* =======================
+   CARDS
+======================= */
 .card{
-background:rgba(255,255,255,0.08);
-padding:18px;
+background:rgba(255,255,255,0.06);
+padding:20px;
 margin-top:15px;
-border-radius:10px;
-transition:0.3s;
+border-radius:12px;
+line-height:1.7;
+transition:0.3s ease;
 }
 
 .card:hover{
-transform:scale(1.02);
-background:rgba(255,255,255,0.12);
+transform:translateY(-6px);
+background:rgba(255,255,255,0.10);
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
 
+/* =======================
+   LINKS
+======================= */
 a{
 color:#39d98a;
 text-decoration:none;
+transition:0.2s;
 }
 
-a:hover{text-decoration:underline;}
+a:hover{
+color:#62f7b0;
+text-decoration:underline;
+}
 
-/* HERO */
+/* =======================
+   HERO SECTION
+======================= */
 .hero{
 text-align:center;
-padding-top:70px;
+padding-top:80px;
 }
 
 .name{
-font-size:42px;
+font-size:48px;
 font-weight:bold;
+color:#39d98a;
+letter-spacing:1px;
+text-shadow:0 0 18px rgba(57,217,138,0.25);
+animation: fadeIn 1s ease-in-out;
 }
 
 .small{
-opacity:0.8;
+opacity:0.85;
+margin-top:6px;
 }
 
-/* SKILLS GRID */
+/* profile image */
+.profile{
+width:280px;
+height:280px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid rgba(57,217,138,0.6);
+box-shadow:0 0 25px rgba(57,217,138,0.15);
+margin-bottom:15px;
+transition:0.3s ease;
+}
+
+.profile:hover{
+transform:scale(1.04);
+}
+
+/* =======================
+   SKILLS GRID
+======================= */
 .skills{
 display:grid;
 grid-template-columns:1fr 1fr 1fr;
-gap:15px;
+gap:18px;
 }
 
 @media(max-width:800px){
 .skills{grid-template-columns:1fr;}
 }
 
-/* IMAGE */
-.profile{
-width:260px;
-height:260px;
-border-radius:50%;
-object-fit:cover;
-border:3px solid white;
-margin-bottom:10px;
+/* animation */
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(-10px);}
+to{opacity:1; transform:translateY(0);}
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
+<!-- ===================== HERO ===================== -->
 <section class="hero">
+
 <img src="portfolio.jpeg" class="profile">
 
 <div class="name">Suhana Dogra</div>
+
 <div class="small">Udhampur, Jammu & Kashmir, India</div>
 <div class="small">32.9156° N, 75.1417° E</div>
+
+<div class="small" style="margin-top:10px; letter-spacing:1px;">
+GIS • Remote Sensing • Climate & Ecosystem Analysis
+</div>
+
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I am an early-career researcher in geospatial and environmental science,
-    specializing in GIS, remote sensing, and spatial analysis. My work focuses on
-    climate variability, land-use change, and environmental risk assessment in the
-    Himalayan region. I have experience in academic research, spatial data analysis,
-    and scientific writing, with interests in climate–environment interactions and
-    sustainable development.
-  </p>
+<!-- ===================== ABOUT ===================== -->
+<section>
+<h2>About Me</h2>
+<p style="line-height:1.8;">
+I am an early-career researcher in geospatial and environmental science,
+specializing in GIS, remote sensing, and spatial analysis. My work focuses on
+climate variability, land-use change, and environmental risk assessment in the
+Himalayan region. I have experience in academic research, spatial data analysis,
+and scientific writing, with interests in climate–environment interactions and
+sustainable development.
+</p>
 </section>
 
-<!-- FEATURED PROJECT -->
+<!-- ===================== PROJECT ===================== -->
 <section>
 <h2>Featured Research Project</h2>
 
@@ -116,12 +187,12 @@ Climate and Ecosystem Resilience of Jammu and Kashmir<br><br>
 </div>
 </section>
 
-<!-- RESEARCH -->
+<!-- ===================== RESEARCH ===================== -->
 <section>
 <h2>Research Experience & Outputs</h2>
 
 <div class="card">
-<h3>Research Assistant — Dr. Rajan Bharti</h3>
+<b>Research Assistant — Dr. Rajan Bharti</b><br>
 Department of Geography, Govt. Degree College, Chenani, Udhampur<br><br>
 • Data analysis and manuscript preparation<br>
 • Spatial and statistical climate–landscape analysis<br>
@@ -129,44 +200,44 @@ Department of Geography, Govt. Degree College, Chenani, Udhampur<br><br>
 </div>
 
 <div class="card">
-<h3>Published Paper</h3>
+<b>Published Paper</b><br>
 <a href="https://er.researchfloor.org/rainfall-variability-soil-susceptibility-and-landslide-vulnerability-in-udhampur-district-in-jammu-and-kashmir-india-a-spatiotemporal-assessment-from-2014-to-2024/?view=full"
 target="_blank">
-Rainfall Variability, Soil Susceptibility, and Landslide Vulnerability (View Publication)
+Rainfall Variability, Soil Susceptibility, and Landslide Vulnerability
 </a>
 </div>
 
 <div class="card">
-<h3>Under Review</h3>
+<b>Under Review</b><br>
 <a href="paper1.pdf" target="_blank">
 Landslide Susceptibility Analysis – Western Himalayas
 </a>
 </div>
 
 <div class="card">
-<h3>Course Project</h3>
+<b>Course Project</b><br>
 <a href="courseproject.pdf" target="_blank">
 Environmental Determinants of Health
 </a>
 </div>
 </section>
 
-<!-- EDUCATION -->
+<!-- ===================== EDUCATION ===================== -->
 <section>
 <h2>Education</h2>
 
 <div class="card">
 M.A./M.Sc Geography — University of Jammu (2022–2024)<br>
-Specialisation: GIS, Remote Sensing, Environmental Geography
+Specialisation in GIS, Remote Sensing, Environmental Geography
 </div>
 
 <div class="card">
 B.A Geography — University of Jammu (2019–2022)<br>
-Foundation in Physical & Human Geography
+Physical and Human Geography Foundation
 </div>
 </section>
 
-<!-- EXPERIENCE -->
+<!-- ===================== EXPERIENCE ===================== -->
 <section>
 <h2>Experience</h2>
 
@@ -186,7 +257,7 @@ Teaching geography and environmental science
 </div>
 </section>
 
-<!-- SKILLS -->
+<!-- ===================== SKILLS ===================== -->
 <section>
 <h2>Skills</h2>
 
@@ -215,7 +286,7 @@ Teaching geography and environmental science
 </div>
 </section>
 
-<!-- CERTIFICATES -->
+<!-- ===================== CERTIFICATES ===================== -->
 <section>
 <h2>Certificates</h2>
 
@@ -226,7 +297,7 @@ Teaching geography and environmental science
 
 </section>
 
-<!-- LANGUAGES -->
+<!-- ===================== LANGUAGES ===================== -->
 <section>
 <h2>Languages</h2>
 
@@ -237,31 +308,24 @@ Dogri (Native)
 </div>
 </section>
 
-
-<!-- CONTACT -->
-<section class="hero" style="padding-bottom:60px; text-align:center;">
+<!-- ===================== CONTACT ===================== -->
+<section class="hero">
 
 <h2>Get in Touch</h2>
 
-<div class="card" style="max-width:500px; margin:auto; text-align:center;">
+<div class="card" style="max-width:500px; margin:auto;">
 
-<!-- Email (opens mail app) -->
 <p>
-📧 <a href="mailto:dograsuhana25@gmail.com" style="color:#39d98a;">
-dograsuhana25@gmail.com
-</a>
+📧 <a href="mailto:dograsuhana25@gmail.com">dograsuhana25@gmail.com</a>
 </p>
 
-<!-- LinkedIn (opens new tab) -->
 <p>
-🔗 <a href="https://www.linkedin.com/in/suhana-dogra-ba5233301/" target="_blank" style="color:#39d98a;">
+🔗 <a href="https://www.linkedin.com/in/suhana-dogra-ba5233301/" target="_blank">
 LinkedIn Profile
 </a>
 </p>
 
 </div>
-
-</section>
 
 </section>
 
