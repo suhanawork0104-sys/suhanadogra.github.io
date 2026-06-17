@@ -1,93 +1,213 @@
 
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-    <title>Suhana Dogra | GIS & Environmental Science</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: auto;
-            padding: 30px;
-            line-height: 1.6;
-        }
-        h1 {
-            color: #1f4e79;
-        }
-        h2 {
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 5px;
-        }
-        .project {
-            margin-bottom: 25px;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Suhana Dogra | GIS & Environmental Science</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    background: linear-gradient(rgba(8,12,20,0.92), rgba(8,12,20,0.92)),
+    url('https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=1800&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Layout */
+.container {
+    max-width: 1050px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 80px 20px 50px;
+}
+
+.hero h1 {
+    font-size: 44px;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    margin-top: 10px;
+    font-size: 18px;
+    opacity: 0.85;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    margin: 12px 8px;
+    padding: 11px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #2b7a78, #3aafa9);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(58,175,169,0.3);
+}
+
+/* Sections */
+section {
+    margin-top: 60px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-left: 4px solid #3aafa9;
+    padding-left: 12px;
+}
+
+/* Cards */
+.card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 18px 20px;
+    border-radius: 14px;
+    margin-top: 14px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.12);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Skills */
+.skills span {
+    display: inline-block;
+    background: rgba(58,175,169,0.15);
+    border: 1px solid rgba(58,175,169,0.3);
+    padding: 7px 12px;
+    margin: 6px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 70px;
+    padding-bottom: 30px;
+    opacity: 0.7;
+    font-size: 14px;
+}
+</style>
+
 </head>
+
 <body>
 
-<h1>Suhana Dogra</h1>
-<p><strong>GIS & Environmental Science Researcher</strong></p>
+<div class="container">
 
-<p>
-Early-career researcher specializing in GIS, Remote Sensing,
-Environmental Science, Climate Studies, and Spatial Analysis.
-</p>
+<!-- HERO -->
 
-<h2>Research Interests</h2>
-<ul>
-<li>Geographic Information Systems (GIS)</li>
-<li>Remote Sensing</li>
-<li>Climate Change Analysis</li>
-<li>Ecosystem Resilience</li>
-<li>Environmental Monitoring</li>
-<li>Land Use and Land Cover Change</li>
-</ul>
+<div class="hero">
+    <h1>Suhana Dogra</h1>
+    <p>GIS & Environmental Science Researcher | Remote Sensing | Climate & Ecosystem Studies</p>
 
+```
+<div style="margin-top:20px;">
+    <a class="btn" href="mailto:dograsuhana25@gmail.com">📧 Email</a>
+    <a class="btn" href="https://www.linkedin.com/in/suhana-dogra-ba5233301/" target="_blank">🔗 LinkedIn</a>
+</div>
+```
+
+</div>
+
+<!-- ABOUT -->
+
+<section>
+<h2>About</h2>
+<div class="card">
+Early-career researcher specializing in GIS, Remote Sensing, Climate Studies, and Environmental Science with focus on Himalayan ecosystem dynamics and spatial analysis.
+</div>
+</section>
+
+<!-- PROJECTS -->
+
+<section>
 <h2>Featured Projects</h2>
 
-<div class="project">
-<h3>Ecosystem Resilience Assessment</h3>
-<p>
-GIS-based assessment of ecosystem resilience using environmental and
-remote sensing indicators.
-</p>
+<div class="card">
+<b>Ecosystem Resilience Assessment</b>
+<p>GIS-based study analyzing ecosystem resilience using spatial and remote sensing indicators.</p>
 </div>
 
-<div class="project">
-<h3>NDVI–Rainfall Analysis in Udhampur</h3>
-<p>
-Research investigating the relationship between vegetation dynamics
-and rainfall variability in the Himalayan region.
-</p>
+<div class="card">
+<b>NDVI–Rainfall Analysis in Udhampur</b>
+<p>Study of vegetation response to rainfall variability using NDVI and climatic datasets.</p>
 </div>
 
+<div class="card">
+<b>More Projects Coming Soon</b>
+<p>Each project will be upgraded into a clickable case study with maps, methodology, and results.</p>
+</div>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section>
 <h2>Research Experience</h2>
-<ul>
-<li>Independent Researcher</li>
-<li>Research Assistant</li>
-<li>Book Chapter Contributor (Under Submission)</li>
-</ul>
 
+<div class="card">Independent Researcher</div>
+<div class="card">Research Assistant (Details updating)</div>
+<div class="card">Book Chapter Contributor (Under Submission)</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section>
 <h2>Technical Skills</h2>
-<ul>
-<li>ArcGIS</li>
-<li>QGIS</li>
-<li>Remote Sensing</li>
-<li>Spatial Analysis</li>
-<li>Cartography</li>
-</ul>
 
+<div class="skills">
+<span>ArcGIS</span>
+<span>QGIS</span>
+<span>Remote Sensing</span>
+<span>Spatial Analysis</span>
+<span>Cartography</span>
+</div>
+</section>
+
+<!-- CONTACT -->
+
+<section>
 <h2>Contact</h2>
-<p>Email: dograsuhana25@gmail.com</p>
+<div class="card">
+Email: dograsuhana25@gmail.com<br><br>
+LinkedIn: <a href="https://www.linkedin.com/in/suhana-dogra-ba5233301/" target="_blank" style="color:#3aafa9;">Click here</a>
+</div>
+</section>
 
-<p>
-LinkedIn:
-<a href="https://www.linkedin.com/in/suhana-dogra-ba5233301/">
-View Profile
-</a>
-</p>
+<footer>
+© 2026 Suhana Dogra | GIS & Environmental Science Portfolio
+</footer>
+
+</div>
 
 </body>
 </html>
