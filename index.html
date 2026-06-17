@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Suhana Dogra | GIS Research Lab</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 /* =========================
    BASE
 ========================= */
@@ -16,16 +17,38 @@ body {
     font-family: "Inter", sans-serif;
     color: #1f2d2a;
 
-    /* GIS-style subtle terrain feel */
     background:
-        radial-gradient(circle at 20% 20%, #eaf3ee 0%, transparent 25%),
+        radial-gradient(circle at 20% 20%, #e6f2ec 0%, transparent 25%),
         radial-gradient(circle at 80% 30%, #e7eef5 0%, transparent 30%),
         radial-gradient(circle at 50% 80%, #f3efe6 0%, transparent 35%),
+        repeating-linear-gradient(
+            45deg,
+            rgba(43,122,120,0.03),
+            rgba(43,122,120,0.03) 1px,
+            transparent 1px,
+            transparent 20px
+        ),
         #f7faf8;
 }
 
 /* =========================
-   NAVBAR (LAB STYLE)
+   ANIMATIONS
+========================= */
+.fade-in {
+    animation: fadeInUp 0.9s ease forwards;
+    opacity: 0;
+    transform: translateY(12px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   NAVBAR
 ========================= */
 .navbar {
     position: sticky;
@@ -34,16 +57,16 @@ body {
     border-bottom: 1px solid #e6e6e6;
     display: flex;
     justify-content: center;
-    gap: 22px;
-    padding: 14px 10px;
+    gap: 20px;
+    padding: 12px;
     z-index: 1000;
 }
 
 .navbar a {
     text-decoration: none;
+    font-size: 13px;
     color: #2f4f4f;
     font-weight: 500;
-    font-size: 14px;
 }
 
 .navbar a:hover {
@@ -55,32 +78,89 @@ body {
 ========================= */
 .header {
     text-align: center;
-    padding: 60px 20px 25px;
+    padding: 50px 20px 20px;
+    position: relative;
+    overflow: hidden;
 }
 
+/* PROFILE IMAGE */
 .header img {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     border: 4px solid #2b7a78;
     object-fit: cover;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
 .header h1 {
-    margin: 14px 0 5px;
-    font-size: 42px;
-    font-weight: 700;
+    margin-top: 15px;
+    font-size: 40px;
     color: #1f3b3a;
 }
 
 .header p {
     color: #4f6b64;
-    font-weight: 400;
 }
 
 /* =========================
-   CONTAINER
+   ROTATING GLOBE
+========================= */
+.globe {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 30% 30%, #bde0fe, #1b4965);
+    box-shadow: inset -10px -10px 25px rgba(0,0,0,0.3);
+    animation: rotateGlobe 10s linear infinite;
+    opacity: 0.85;
+}
+
+@keyframes rotateGlobe {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* SATELLITES */
+.satellite {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #2b7a78;
+    border-radius: 50%;
+    animation: orbit 6s linear infinite;
+}
+
+@keyframes orbit {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(80px,-40px); }
+    100% { transform: translate(0,0); }
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    margin: 10px 6px;
+    padding: 10px 14px;
+    background: #2b7a78;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    background: #236864;
+}
+
+/* =========================
+   LAYOUT
 ========================= */
 .container {
     max-width: 1050px;
@@ -88,29 +168,24 @@ body {
     padding: 20px;
 }
 
-/* =========================
-   SECTION TITLE (LAB STYLE)
-========================= */
+/* SECTION TITLE */
 .section-title {
-    font-size: 16px;
-    font-weight: 600;
     margin-top: 40px;
-    padding-left: 12px;
+    font-weight: 600;
     border-left: 4px solid #2b7a78;
+    padding-left: 10px;
     color: #223632;
 }
 
-/* =========================
-   CARDS (CLEAN ACADEMIC)
-========================= */
+/* CARDS */
 .card {
     background: #ffffff;
     margin-top: 12px;
-    padding: 16px 18px;
+    padding: 16px;
     border-radius: 12px;
     border: 1px solid #e8eceb;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-    transition: all 0.25s ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    transition: 0.25s ease;
     text-decoration: none;
     color: inherit;
     display: block;
@@ -118,174 +193,131 @@ body {
 
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+    box-shadow: 0 12px 24px rgba(43,122,120,0.12);
 }
 
-/* =========================
-   TAGS
-========================= */
 .tag {
-    display: inline-block;
-    margin-top: 6px;
     font-size: 12px;
+    background: #e8f3ef;
     padding: 4px 8px;
     border-radius: 20px;
-    background: #e8f3ef;
     color: #2b7a78;
 }
 
-/* =========================
-   BUTTONS
-========================= */
-.btn {
-    display: inline-block;
-    margin: 8px;
-    padding: 10px 14px;
-    border-radius: 10px;
-    text-decoration: none;
-    background: #2b7a78;
-    color: white;
-    font-weight: 500;
-    font-size: 14px;
-}
-
-.btn:hover {
-    background: #236864;
-}
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
 <div class="navbar">
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#publications">Publications</a>
-    <a href="#education">Education</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#certs">Certificates</a>
-    <a href="#contact">Contact</a>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#publications">Publications</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
 </div>
 
 <!-- HEADER -->
-<div class="header">
-    <img src="portfolio.jpeg" alt="Profile Photo">
-    <h1>Suhana Dogra</h1>
-    <p>GIS & Remote Sensing Researcher | Climate • Ecosystems • Spatial Analysis</p>
+<div class="header fade-in">
 
-    <a class="btn" href="mailto:dograsuhana25@gmail.com">Email</a>
-    <a class="btn" href="https://linkedin.com" target="_blank">LinkedIn</a>
+<div class="globe"></div>
+<div class="satellite" style="top:60px; left:60px;"></div>
+<div class="satellite" style="top:120px; left:200px;"></div>
+
+<img src="portfolio.jpeg" alt="Profile">
+
+<h1>Suhana Dogra</h1>
+<p>GIS & Remote Sensing Researcher | Climate & Ecosystem Studies</p>
+
+<a class="btn" href="mailto:dograsuhana25@gmail.com">Email</a>
+<a class="btn" href="https://linkedin.com" target="_blank">LinkedIn</a>
+
 </div>
 
 <div class="container">
 
 <!-- ABOUT -->
-<section id="about">
+<section id="about" class="fade-in">
 <div class="section-title">About</div>
 <div class="card">
-Early-career researcher in geospatial and environmental science with specialization in GIS, remote sensing, and spatial analysis. Focused on climate–environment interactions, ecosystem dynamics, and Himalayan landscape studies.
+GIS and environmental science researcher focused on climate–ecosystem interactions, spatial modelling, and Himalayan landscape systems.
 </div>
 </section>
 
-<!-- PROJECT -->
-<section id="projects">
+<!-- PROJECTS -->
+<section id="projects" class="fade-in">
 <div class="section-title">Featured GIS Project</div>
 
-<a class="card" href="project-resilience.html">
-<b>Climate and Ecosystem Resilience Assessment of Jammu & Kashmir</b><br>
-<span class="tag">Click to view methodology, maps & outputs</span>
+<a class="card" href="project.html">
+<b>Climate and Ecosystem Resilience of Jammu & Kashmir</b><br><br>
+<span class="tag">Click to view maps, methodology & results</span>
 </a>
-
 </section>
 
 <!-- PUBLICATIONS -->
-<section id="publications">
+<section id="publications" class="fade-in">
 <div class="section-title">Research & Publications</div>
 
-<a class="card" target="_blank"
-href="https://er.researchfloor.org/rainfall-variability-soil-susceptibility-and-landslide-vulnerability-in-udhampur-district-in-jammu-and-kashmir-india-a-spatiotemporal-assessment-from-2014-to-2024/?view=full">
-<b>Published:</b> Rainfall Variability, Soil Susceptibility & Landslide Vulnerability (Udhampur, J&K)
+<a class="card" target="_blank" href="https://er.researchfloor.org/rainfall-variability-soil-susceptibility-and-landslide-vulnerability-in-udhampur-district-in-jammu-and-kashmir-india-a-spatiotemporal-assessment-from-2014-to-2024/?view=full">
+Published Paper: Rainfall Variability & Landslide Vulnerability
 </a>
 
 <div class="card">
-<b>Under Review:</b> Landslide Susceptibility Analysis – Western Himalayas
-</div>
-
-<div class="card">
-<b>Course Project:</b> Environmental Determinants of Health
+Under Review: Landslide Susceptibility Analysis – Western Himalayas
 </div>
 
 </section>
 
 <!-- EDUCATION -->
-<section id="education">
+<section id="education" class="fade-in">
 <div class="section-title">Education</div>
 
 <div class="card">
-<b>M.A./M.Sc. Geography — University of Jammu</b><br><br>
-Dec 2022 – Jul 2024<br><br>
-
-• Specialisation in GIS, remote sensing, and environmental geography<br>
-• Research-focused coursework on climate–environment interactions and spatial analysis<br>
-• Dissertation: rainfall variability and vegetation–climate relationships in the Himalayan region
+M.A./M.Sc. Geography — University of Jammu (2022–2024)
 </div>
 
 <div class="card">
-<b>B.A. Geography — University of Jammu</b><br><br>
-Sep 2019 – Aug 2022<br><br>
-
-• Foundational studies in physical and human geography
+B.A. Geography — University of Jammu (2019–2022)
 </div>
-
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-<div class="section-title">Experience</div>
-
-<div class="card">GIS Analyst — DronaMaps Pvt. Ltd</div>
-<div class="card">GIS Intern — GIS Vision India</div>
-<div class="card">Online Tutor — Preply (Geography & Environmental Science)</div>
 
 </section>
 
 <!-- SKILLS -->
-<section id="skills">
+<section id="skills" class="fade-in">
 <div class="section-title">Technical Skills</div>
 
 <div class="card">
-GIS: ArcGIS, QGIS, Spatial Analysis<br>
-Remote Sensing: NDVI, Landsat, Raster Analysis<br>
-Programming: Python (Geospatial Workflows)
+GIS | Remote Sensing | QGIS | ArcGIS | Python | Spatial Analysis | Cartography
 </div>
-
-</section>
-
-<!-- CERTIFICATES -->
-<section id="certs">
-<div class="section-title">Certificates</div>
-
-<a class="card" href="cert1.html">Geospatial Analysis and Python – MindLuster</a>
-<a class="card" href="cert2.html">Ecosystem & Natural Resources – IGNOU SWAYAM</a>
-<a class="card" href="cert3.html">Diploma in Computer Applications</a>
-<a class="card" href="cert4.html">Climate Change Science – Alison</a>
 
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
-<div class="section-title">Get in Touch</div>
+<section id="contact" class="fade-in">
+<div class="section-title">Contact</div>
 
 <div class="card">
-📧 <b>Email:</b> dograsuhana25@gmail.com<br>
-🔗 LinkedIn: via header button
+📧 dograsuhana25@gmail.com
 </div>
 
 </section>
 
 </div>
+
+<script>
+const elements = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+        }
+    });
+});
+
+elements.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
