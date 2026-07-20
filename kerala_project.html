@@ -180,115 +180,185 @@ The final EVI ranges from lower vulnerability to higher vulnerability and is vis
 <!-- DATA -->
 <section>
 <h2>Data & Variables</h2>
+
 <ul>
-Digital Elevation Model (DEM)
-
-Slope
-
-Rainfall
-
-Normalized Difference Vegetation Index (NDVI)
-
-Land Cover
-
-Environmental Vulnerability Index (EVI)
+<li>Digital Elevation Model (DEM) — USGS SRTM</li>
+<li>Slope — Derived from DEM using QGIS</li>
+<li>Normalized Difference Vegetation Index (NDVI) — Google Earth Engine</li>
+<li>Rainfall — Google Earth Engine</li>
+<li>Land Cover — Google Earth Engine</li>
+<li>Environmental Vulnerability Index (EVI)</li>
 </ul>
+
 </section>
 
 <!-- METHODOLOGY -->
 <section>
-<h2>Methodology Flowchart</h2>
+
+<h2>Methodology</h2>
 
 <div class="flow">
 
-<div class="box">WorldClim</div>
-<div class="box">Temperature + Precipitation</div>
-<div class="arrow">↓ CSI</div>
+<div class="box">USGS SRTM DEM</div>
+
+<div class="arrow">↓</div>
+
+<div class="box">Slope (Derived in QGIS)</div>
+
+<div class="arrow">↓</div>
+
+<div class="box">Google Earth Engine</div>
 
 <div class="row">
-<div class="box">Landsat NDVI</div>
-<div class="box">Forest Cover</div>
-</div>
-<div class="arrow">↓ ACI</div>
 
-<div class="row">
-<div class="box">Slope</div>
-<div class="box">Aspect</div>
+<div class="box">NDVI</div>
+
+<div class="box">Rainfall</div>
+
 <div class="box">Land Cover</div>
-</div>
-<div class="arrow">↓ ESI</div>
-
-<div class="arrow">ACI + CSI + ESI</div>
-<div class="box">Resilience Index (RI)</div>
 
 </div>
+
+<div class="arrow">↓</div>
+
+<div class="box">Raster Pre-processing</div>
+
+<div class="arrow">↓</div>
+
+<div class="box">Normalization</div>
+
+<div class="arrow">↓</div>
+
+<div class="box">Weighted Overlay Analysis</div>
+
+<div class="arrow">↓</div>
+
+<div class="box">Environmental Vulnerability Index (EVI)</div>
+
+<div class="arrow">↓</div>
+
+<div class="box">Interactive Streamlit Dashboard</div>
+
+</div>
+
 </section>
 
-<!-- FORMULAS -->
+<!-- FORMULA -->
 <section>
-<h2>Index Formulation</h2>
 
-<p><b>Adaptive Capacity Index (ACI)</b></p>
-<p>ACI = (NDVI_norm + Forest_cover_norm) / 2</p>
+<h2>Environmental Vulnerability Index</h2>
 
-<p><b>Climate Stress Index (CSI)</b></p>
-<p>CSI = (Temperature_norm + Precipitation_norm) / 2</p>
+<p>
 
-<p><b>Ecosystem Sensitivity Index (ESI)</b></p>
-<p>ESI = (Slope_norm + Aspect_norm + LULC_norm) / 3</p>
+The Environmental Vulnerability Index (EVI) was developed using a weighted overlay
+approach by integrating five environmental indicators representing terrain,
+vegetation, climate and land cover.
 
-<p><b>Resilience Index (RI)</b></p>
-<p>RI = (ACI + (1 - CSI) + (1 - ESI)) / 3</p>
+</p>
+
+<p><b>Weighted Overlay Formula</b></p>
+
+<p>
+
+EVI =
+(0.15 × DEM)
++
+(0.30 × Slope)
++
+(0.20 × NDVI)
++
+(0.25 × Rainfall)
++
+(0.10 × Land Cover)
+
+</p>
+
+<p>
+
+Each raster layer was normalized before applying the assigned weights.
+Higher EVI values indicate greater environmental vulnerability,
+while lower values represent relatively stable environmental conditions.
+
+</p>
+
 </section>
 
-<!-- MAPS -->
+<!-- OUTPUTS -->
 <section>
-<h2>Final Output Maps</h2>
 
-<div class="maps">
+<h2>Project Outputs</h2>
 
-<div class="map" onclick="openImg('ACI.jpg')">
-<img src="ACI.jpg">
-<p>Adaptive Capacity Index (ACI)</p>
+<section>
+
+<h2>Project Outputs</h2>
+
+<ul>
+
+<li>Environmental Vulnerability Index (EVI) Raster</li>
+
+<li>Interactive Environmental Vulnerability Map</li>
+
+<li>Raster Statistics Dashboard</li>
+
+<li>Environmental Data Explorer</li>
+
+<li>Python-based GIS Analysis Workflow</li>
+
+</ul>
+
+</section>
 </div>
 
-<div class="map" onclick="openImg('CSI.jpg')">
-<img src="CSI.jpg">
-<p>Climate Stress Index (CSI)</p>
 </div>
 
-<div class="map" onclick="openImg('ESI.jpg')">
-<img src="ESI.jpg">
-<p>Ecosystem Sensitivity Index (ESI)</p>
-</div>
-
-<div class="map" onclick="openImg('RI.jpg')">
-<img src="RI.jpg">
-<p>Resilience Index (RI)</p>
-</div>
-
-</div>
 </section>
 
 <!-- INTERPRETATION -->
 <section>
+
 <h2>Interpretation</h2>
+
 <p>
-The results reveal spatial heterogeneity in ecosystem resilience across Jammu & Kashmir. High resilience zones correspond to stable vegetation and lower climatic stress, while low resilience zones indicate higher environmental vulnerability.
+
+The Environmental Vulnerability Index highlights spatial variations in
+environmental conditions across Kerala. Areas with higher EVI values
+represent relatively greater environmental vulnerability due to the combined
+influence of terrain, rainfall, vegetation, and land-cover characteristics,
+whereas lower values indicate comparatively stable environmental conditions.
+
 </p>
+
 </section>
 
 <!-- SKILLS -->
 <section>
+
 <h2>Skills Demonstrated</h2>
+
 <ul>
-<li>GIS Raster Analysis (QGIS)</li>
-<li>Remote Sensing (NDVI)</li>
-<li>Spatial Modeling (MCDA)</li>
-<li>Environmental Index Construction</li>
-<li>Cartographic Visualization</li>
-<li>Data Normalization & Raster Processing</li>
+
+<li>GIS Spatial Analysis</li>
+
+<li>Remote Sensing</li>
+
+<li>Google Earth Engine</li>
+
+<li>Python Programming</li>
+
+<li>QGIS</li>
+
+<li>Raster Processing</li>
+
+<li>Environmental Modelling</li>
+
+<li>Multi-Criteria Decision Analysis (MCDA)</li>
+
+<li>Interactive Dashboard Development (Streamlit)</li>
+
+<li>Spatial Data Visualization</li>
+
 </ul>
+
 </section>
 
 </div>
@@ -299,11 +369,17 @@ The results reveal spatial heterogeneity in ecosystem resilience across Jammu & 
 </div>
 
 <script>
+
 function openImg(src){
-    document.getElementById("modalImg").src = src;
-    document.getElementById("modal").style.display = "flex";
+
+document.getElementById("modalImg").src = src;
+
+document.getElementById("modal").style.display = "flex";
+
 }
+
 </script>
 
 </body>
+
 </html>
