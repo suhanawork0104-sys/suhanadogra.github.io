@@ -1,201 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kerala Environmental Vulnerability Dashboard/title>
+
+<title>Kerala Environmental Vulnerability Dashboard</title>
 
 <style>
-body{
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#0b1f33;
-    color:white;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-/* contour background */
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#0b1f33;
+color:white;
+line-height:1.8;
+}
+
 body::before{
-    content:"";
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
-    opacity:0.18;
-    z-index:-1;
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:url("https://www.transparenttextures.com/patterns/cubes.png");
+opacity:0.15;
+z-index:-1;
 }
 
 .container{
-    width:90%;
-    max-width:1100px;
-    margin:auto;
-    padding:40px 0;
+width:90%;
+max-width:1100px;
+margin:auto;
+padding:50px 0;
 }
 
-/* HERO */
 .hero{
-    text-align:center;
-    padding:50px 20px;
+text-align:center;
+padding:50px 20px;
 }
 
 .hero h1{
-    font-size:34px;
-    margin-bottom:10px;
+font-size:40px;
+margin-bottom:10px;
 }
 
 .hero p{
-    opacity:0.85;
+opacity:0.9;
+font-size:18px;
 }
 
-/* SECTION BOX */
+.dashboard-btn{
+
+display:inline-block;
+margin-top:30px;
+padding:14px 34px;
+background:#2fbf71;
+color:white;
+font-weight:bold;
+border-radius:8px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.dashboard-btn:hover{
+background:#27a864;
+}
+
 section{
-    background:white;
-    color:#1a1a1a;
-    padding:25px;
-    margin:20px 0;
-    border-radius:12px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.25);
+
+background:white;
+color:#222;
+padding:30px;
+margin:25px 0;
+border-radius:14px;
+box-shadow:0 8px 24px rgba(0,0,0,.25);
+
 }
 
-/* headings */
 h2{
-    color:#0b3d91;
+
+color:#0b3d91;
+margin-bottom:15px;
+
 }
 
-/* FLOWCHART */
 .flow{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:10px;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:12px;
+
 }
 
 .row{
-    display:flex;
-    gap:30px;
-    justify-content:center;
-    flex-wrap:wrap;
+
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+
 }
 
 .box{
-    background:#e8f1ff;
-    border:2px solid #4a90e2;
-    padding:10px 14px;
-    border-radius:8px;
-    min-width:160px;
-    text-align:center;
-    font-weight:bold;
+
+background:#e8f1ff;
+border:2px solid #4a90e2;
+padding:12px 18px;
+border-radius:8px;
+min-width:180px;
+text-align:center;
+font-weight:bold;
+
 }
 
 .arrow{
-    font-size:20px;
-    color:#4a90e2;
+
+font-size:22px;
+color:#4a90e2;
+
 }
 
-/* MAP GRID */
-.maps{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:15px;
+ul{
+
+padding-left:25px;
+
 }
 
-.map{
-    background:#f4f6f8;
-    border-radius:10px;
-    overflow:hidden;
-    cursor:pointer;
-    transition:0.3s;
+li{
+
+margin-bottom:10px;
+
 }
 
-.map:hover{
-    transform:scale(1.06);
-}
-
-.map img{
-    width:100%;
-    height:150px;
-    object-fit:cover;
-}
-
-.map p{
-    text-align:center;
-    padding:8px;
-    font-weight:bold;
-}
-
-/* LINKS */
-a{
-    color:green;
-    text-decoration:none;
-}
-
-/* MODAL */
-#modal{
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.85);
-    justify-content:center;
-    align-items:center;
-}
-
-#modal img{
-    max-width:85%;
-    max-height:85%;
-}
 </style>
+
 </head>
 
 <body>
 
 <div class="container">
 
-<!-- HERO -->
 <div class="hero">
+
 <h1>Kerala Environmental Vulnerability Dashboard</h1>
-<p>Python • GIS • Remote Sensing • Google Earth Engine • Streamlit</p>
+
+<p>
+Python • GIS • Remote Sensing • Google Earth Engine • Streamlit
+</p>
+
+<a href="#" class="dashboard-btn">
+🌍 View Dashboard
+</a>
+
 </div>
 
-<!-- OVERVIEW -->
 <section>
-This project develops an Environmental Vulnerability Index (EVI) for Kerala using GIS, remote sensing, and Python. Multiple environmental indicators—including Digital Elevation Model (DEM), slope, rainfall, vegetation (NDVI), and land cover—were integrated into a weighted model to assess environmental vulnerability across the state.
+
+<h2>Project Overview</h2>
+
+<p>
+
+This project develops an Environmental Vulnerability Index (EVI) for Kerala using GIS, remote sensing and Python. Multiple environmental indicators including Digital Elevation Model (DEM), slope, rainfall, vegetation (NDVI), and land cover were integrated into a weighted model to evaluate environmental vulnerability across the state.
+
+</p>
+
+<br>
+
+<p>
 
 The project combines Google Earth Engine for remote sensing, QGIS for spatial processing, and Python for raster analysis, statistical calculations, and development of an interactive Streamlit dashboard. The final output supports environmental assessment through interactive visualization and spatial analysis.
+
+</p>
+
 </section>
 
-<!-- CONCEPT -->
 <section>
+
 <h2>Methodology</h2>
-<p>
-The Environmental Vulnerability Index (EVI) was developed by integrating five environmental indicators representing terrain, vegetation, climate, and land cover characteristics. Each dataset was preprocessed, normalized, assigned a weight according to its influence on environmental vulnerability, and combined using a weighted overlay approach.
 
-The final EVI ranges from lower vulnerability to higher vulnerability and is visualized through an interactive Streamlit dashboard.
-<p>    
+<p>
+
+The Environmental Vulnerability Index (EVI) was developed by integrating five environmental indicators representing terrain, vegetation, climate and land cover characteristics. Each dataset was preprocessed, normalized, assigned a weight according to its contribution to environmental vulnerability, and combined using a weighted overlay approach.
+
+</p>
+
 </section>
 
-<!-- DATA -->
 <section>
+
 <h2>Data & Variables</h2>
 
 <ul>
+
 <li>Digital Elevation Model (DEM) — USGS SRTM</li>
+
 <li>Slope — Derived from DEM using QGIS</li>
+
 <li>Normalized Difference Vegetation Index (NDVI) — Google Earth Engine</li>
+
 <li>Rainfall — Google Earth Engine</li>
+
 <li>Land Cover — Google Earth Engine</li>
+
 <li>Environmental Vulnerability Index (EVI)</li>
+
 </ul>
 
 </section>
 
-<!-- METHODOLOGY -->
 <section>
 
-<h2>Methodology</h2>
+<h2>Methodology Workflow</h2>
 
 <div class="flow">
 
@@ -203,7 +227,7 @@ The final EVI ranges from lower vulnerability to higher vulnerability and is vis
 
 <div class="arrow">↓</div>
 
-<div class="box">Slope (Derived in QGIS)</div>
+<div class="box">Slope (QGIS)</div>
 
 <div class="arrow">↓</div>
 
@@ -243,50 +267,56 @@ The final EVI ranges from lower vulnerability to higher vulnerability and is vis
 
 </section>
 
-<!-- FORMULA -->
 <section>
 
-<h2>Environmental Vulnerability Index</h2>
+<h2>Environmental Vulnerability Index (EVI)</h2>
 
 <p>
 
-The Environmental Vulnerability Index (EVI) was developed using a weighted overlay
-approach by integrating five environmental indicators representing terrain,
-vegetation, climate and land cover.
+The Environmental Vulnerability Index (EVI) was developed using a weighted overlay approach by integrating five environmental indicators representing terrain, vegetation, climate, and land cover.
 
 </p>
 
-<p><b>Weighted Overlay Formula</b></p>
+<br>
 
-<p>
+<h3>Weighted Overlay Formula</h3>
+
+<p style="font-size:18px; font-weight:bold; text-align:center;">
 
 EVI =
+
+<br><br>
+
 (0.15 × DEM)
+
 +
+
 (0.30 × Slope)
+
 +
+
 (0.20 × NDVI)
+
 +
+
 (0.25 × Rainfall)
+
 +
+
 (0.10 × Land Cover)
 
 </p>
 
+<br>
+
 <p>
 
-Each raster layer was normalized before applying the assigned weights.
-Higher EVI values indicate greater environmental vulnerability,
-while lower values represent relatively stable environmental conditions.
+Each raster layer was normalized before applying the assigned weights. Higher EVI values indicate greater environmental vulnerability, while lower values represent relatively stable environmental conditions.
 
 </p>
 
 </section>
 
-<!-- OUTPUTS -->
-<section>
-
-<h2>Project Outputs</h2>
 
 <section>
 
@@ -307,30 +337,21 @@ while lower values represent relatively stable environmental conditions.
 </ul>
 
 </section>
-</div>
 
-</div>
 
-</section>
-
-<!-- INTERPRETATION -->
 <section>
 
 <h2>Interpretation</h2>
 
 <p>
 
-The Environmental Vulnerability Index highlights spatial variations in
-environmental conditions across Kerala. Areas with higher EVI values
-represent relatively greater environmental vulnerability due to the combined
-influence of terrain, rainfall, vegetation, and land-cover characteristics,
-whereas lower values indicate comparatively stable environmental conditions.
+The Environmental Vulnerability Index highlights spatial variations in environmental conditions across Kerala. Areas with higher EVI values represent relatively greater environmental vulnerability due to the combined influence of terrain, rainfall, vegetation, and land-cover characteristics, whereas lower values indicate comparatively stable environmental conditions.
 
 </p>
 
 </section>
 
-<!-- SKILLS -->
+
 <section>
 
 <h2>Skills Demonstrated</h2>
@@ -361,24 +382,36 @@ whereas lower values indicate comparatively stable environmental conditions.
 
 </section>
 
+
+<section style="text-align:center;">
+
+<h2>Interactive Dashboard</h2>
+
+<p>
+
+The Environmental Vulnerability Dashboard was developed using Streamlit to enable interactive visualization of raster datasets, statistical summaries, and environmental indicators.
+
+</p>
+
+<br>
+
+<a href="#"
+class="dashboard-btn">
+
+🌍 Launch Interactive Dashboard
+
+</a>
+
+<p style="margin-top:20px; color:#666; font-size:14px;">
+
+*The live dashboard link will be added after deployment.*
+
+</p>
+
+</section>
+
+
 </div>
-
-<!-- MODAL -->
-<div id="modal" onclick="this.style.display='none'">
-<img id="modalImg">
-</div>
-
-<script>
-
-function openImg(src){
-
-document.getElementById("modalImg").src = src;
-
-document.getElementById("modal").style.display = "flex";
-
-}
-
-</script>
 
 </body>
 
