@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Climate & Ecosystem Resilience - J&K</title>
+<title>Kerala Environmental Vulnerability Dashboard/title>
 
 <style>
 body{
@@ -156,35 +156,42 @@ a{
 
 <!-- HERO -->
 <div class="hero">
-<h1>Climate and Ecosystem Resilience of Jammu & Kashmir</h1>
-<p>GIS-Based Spatial Modeling using QGIS</p>
+<h1>Kerala Environmental Vulnerability Dashboard</h1>
+<p>Python • GIS • Remote Sensing • Google Earth Engine • Streamlit</p>
 </div>
 
 <!-- OVERVIEW -->
 <section>
-<h2>Project Overview</h2>
-<p>
-This GIS-based study evaluates ecosystem resilience across Jammu & Kashmir by integrating climate, vegetation, and terrain variables into a unified spatial model. The goal is to derive a Resilience Index (RI) representing environmental stability and vulnerability patterns.
-</p>
+This project develops an Environmental Vulnerability Index (EVI) for Kerala using GIS, remote sensing, and Python. Multiple environmental indicators—including Digital Elevation Model (DEM), slope, rainfall, vegetation (NDVI), and land cover—were integrated into a weighted model to assess environmental vulnerability across the state.
+
+The project combines Google Earth Engine for remote sensing, QGIS for spatial processing, and Python for raster analysis, statistical calculations, and development of an interactive Streamlit dashboard. The final output supports environmental assessment through interactive visualization and spatial analysis.
 </section>
 
 <!-- CONCEPT -->
 <section>
-<h2>Conceptual Framework</h2>
+<h2>Methodology</h2>
 <p>
-Ecosystem resilience is modeled as interaction between ecological condition, climatic stress, and terrain sensitivity. All variables are normalized to ensure comparability and integrated using a multi-criteria GIS framework.
-</p>
+The Environmental Vulnerability Index (EVI) was developed by integrating five environmental indicators representing terrain, vegetation, climate, and land cover characteristics. Each dataset was preprocessed, normalized, assigned a weight according to its influence on environmental vulnerability, and combined using a weighted overlay approach.
+
+The final EVI ranges from lower vulnerability to higher vulnerability and is visualized through an interactive Streamlit dashboard.
+<p>    
 </section>
 
 <!-- DATA -->
 <section>
 <h2>Data & Variables</h2>
 <ul>
-<li>NDVI (Vegetation health)</li>
-<li>Temperature (Climate stress)</li>
-<li>Precipitation (Moisture availability)</li>
-<li>DEM-derived Slope & Aspect</li>
-<li>Land Use/Land Cover</li>
+Digital Elevation Model (DEM)
+
+Slope
+
+Rainfall
+
+Normalized Difference Vegetation Index (NDVI)
+
+Land Cover
+
+Environmental Vulnerability Index (EVI)
 </ul>
 </section>
 
