@@ -15,7 +15,6 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 }
-
 body{
 font-family:Arial, Helvetica, sans-serif;
 background:#0b1f33;
@@ -58,20 +57,23 @@ font-size:18px;
 }
 
 .dashboard-btn{
-
-display:inline-block;
-margin-top:30px;
-padding:14px 34px;
-background:#2fbf71;
-color:white;
-font-weight:bold;
-border-radius:8px;
-text-decoration:none;
-transition:0.3s;
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 34px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    font-size:17px;
+    border-radius:8px;
+    transition:0.3s ease;
+    box-shadow:0 4px 12px rgba(37,99,235,.3);
 }
 
 .dashboard-btn:hover{
-background:#27a864;
+    background:#1d4ed8;
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(37,99,235,.4);
 }
 
 section{
@@ -157,8 +159,8 @@ margin-bottom:10px;
 Python • GIS • Remote Sensing • Google Earth Engine • Streamlit
 </p>
 
-<a href="https://kerala-dashboard.streamlit.app/" target="_blank">
-    <button>🌍 View Dashboard</button>
+<a href="https://kerala-dashboard.streamlit.app/" target="_blank" rel="noopener noreferrer" class="dashboard-btn">
+    🌍 View Dashboard
 </a>
 
 </div>
@@ -385,31 +387,21 @@ The Environmental Vulnerability Index highlights spatial variations in environme
 
 <section style="text-align:center;">
 
-<h2>Interactive Dashboard</h2>
+<h3>Interactive Dashboard</h3>
 
 <p>
-
-The Environmental Vulnerability Dashboard was developed using Streamlit to enable interactive visualization of raster datasets, statistical summaries, and environmental indicators.
-
+The Environmental Vulnerability Dashboard was developed using Streamlit to enable
+interactive visualization of raster datasets, statistical summaries and
+environmental indicators.
 </p>
 
-<br>
-
-<a href="#"
-class="dashboard-btn">
-
-🌍 Launch Interactive Dashboard
-
+<a href="https://kerala-dashboard.streamlit.app/"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="dashboard-btn">
+    🌍 Launch Interactive Dashboard
 </a>
-
-<p style="margin-top:20px; color:#666; font-size:14px;">
-
-*The live dashboard link will be added after deployment.*
-
-</p>
-
 </section>
-
 
 </div>
 
